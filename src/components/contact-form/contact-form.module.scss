@@ -1,0 +1,6 @@
+.contact-form {
+    position: relative;
+    border-radius: $primaryBorderRadius;
+    background-color: rgba($primary, 0.3);
+    backdrop-filter: blur(10px);
+}

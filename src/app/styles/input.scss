@@ -1,0 +1,13 @@
+.form-control {
+    --bs-border-width: 0;
+    font-weight: 200;
+
+    &::placeholder {
+        color: rgba(#000, 0.4);
+    }
+}
+
+.form-label {
+    line-height: 1;
+    margin-bottom: 10px;
+}

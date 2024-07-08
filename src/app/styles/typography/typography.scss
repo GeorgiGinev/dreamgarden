@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTExtraBold.otf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTBold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTHeavy.otf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTDemi.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTMedium.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTBook.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: FuturaPT;
+  src: url("fonts/futuraPT/FuturaPTLight.otf") format("opentype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Felidae";
+  src: url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.eot");
+  src: url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/23bd89677cc3b9a9cfad1ac3fa5ce97e.svg#Felidae")format("svg");
+}
+
+@font-face {
+  font-family: "Corinthia";
+  src: url("fonts/corinthia/corinthia.eot"); /* IE9 Compat Modes */
+  src: url("fonts/corinthia/corinthia.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("fonts/corinthia/corinthia.otf") format("opentype"), /* Open Type Font */
+  url("fonts/corinthia/corinthia.svg") format("svg"), /* Legacy iOS */
+  url("fonts/corinthia/corinthia.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("fonts/corinthia/corinthia.woff") format("woff"), /* Modern Browsers */
+  url("fonts/corinthia/corinthia.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
