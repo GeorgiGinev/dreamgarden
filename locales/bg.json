@@ -1,0 +1,47 @@
+{
+    "Header": {
+      "Logo": "Приказна градина",
+      "logoText": "Нашето лого",
+      "virtualTour": "Виртуален Тур",
+      "gallery": "Галерия",
+      "services": "Услуги",
+      "aboutUs": "За нас",
+      "contacts": "Контакти"
+    },
+    "Home": {
+      "askUs": "Запитване",
+      "servicesBoxOur": "Нашите",
+      "servicesBoxServices": "Услуги",
+      "servicesBoxDescription": "Скрита сред вековни чинари и пухкав килим от прясно окосена трева, Приказната Градина е щипката магия, която ще превърне вашето събитие в неповторим и уникален празник на сетивата. Само на 20 км. от София, локацията съчетава удобствата на големия град с уютна, живописна атмосфера под звездите.",
+      "servicesWeddings": "Сватби",
+      "servicesWeddingsDescription": "Уникална атмосфера на открито, покрита ресторантска част, бутиков апартамент за подготовка",
+      "servicesTeambuilding": "Тиймбилдинг",
+      "servicesTeambuildingDescription": "Изнесен офис или тийм билдинг сред величествени чинари, горска свежест и приказна обстановка",
+      "servicesParties": "Партита",
+      "servicesPartiesDescription": "Поводът няма значение - Приказната градина е с широко отворени врати обятия за частно парти",
+      "factsBoxKey": "Ключови",
+      "factsBoxFacts": "Факти",
+      "locationBoxConvenient": "Удобна",
+      "locationBoxLocation": "Локация",
+      "locationHomeAddressTitle": "Точен адрес",
+      "locationHomeContactTitle": "Контакти"
+    },
+    "ContactForm": {
+      "contactFormPrimaryTitle": "Изпрати",
+      "contactFormSecondaryTitle": "Запитване",
+      "contactFormInputName": "Име",
+      "contactFormInputPhoneNumber": "Телефонен номер",
+      "contactFormInputEmail": "Имейл",
+      "contactFormInputDate": "Желана дата",
+      "contactFormInputNote": "Бележка",
+      "contactFormSendButton": "Изпрати"
+    },
+    "Footer": {
+      "footerServices": "Услуги",
+      "footerServicesOne": "Сватби",
+      "footerServicesTwo": "Тиймбилдинг",
+      "footerServicesThree": "Партита",
+      "footerContacts": "Контакти",
+      "footerFollowUs": "Последвайте ни"
+    }
+  }

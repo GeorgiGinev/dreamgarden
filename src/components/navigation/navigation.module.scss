@@ -1,0 +1,24 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    :global(.navbar-toggler) {
+        padding: 0;
+        border: 0;
+    }
+    
+    :global(.nav-link) {
+        margin: 0 20px !important;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        color: #fff;
+
+        :global(.btn) {
+            text-transform: uppercase;
+        }
+    }
+}

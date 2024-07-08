@@ -1,0 +1,11 @@
+@import "./variables.scss";
+    
+@import "bootstrap/scss/functions"; 
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+@import "bootstrap";
+@import "~aos/src/sass/aos.scss";
+
+@import "./typography.scss";
+@import "./input.scss";

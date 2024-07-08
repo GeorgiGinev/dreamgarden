@@ -1,0 +1,8 @@
+.container {
+    display: block;
+
+    :global(.title-wrapper) {
+        font-family: "Felidae", sans-serif;
+        line-height: 1;
+    }
+}

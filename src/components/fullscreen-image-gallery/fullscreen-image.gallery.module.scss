@@ -1,0 +1,102 @@
+.close-button {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.close-button {
+    --bs-btn-close-opacity: 1;
+    --bs-btn-close-hover-opacity: 1;
+    --bs-btn-close-bg: url("/images/icons/close.svg");
+}
+
+.fullscreen-image-gallery-modal-content {
+    height: 100%;
+
+    :global(.modal-header) {
+        z-index: 1;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        --bs-modal-header-padding: 0;
+        --bs-modal-header-padding-y: 0;
+        --bs-modal-header-padding-x: 0;
+
+        button {
+            background-color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: background-color 100ms ease;
+
+            &:hover, &:active {
+                background-color: darken(#fff, 10);
+            }
+        }
+    }
+
+    :global(.modal-footer) {
+        z-index: 1;
+        justify-content: space-between;
+        width: 200px;
+        margin: auto;
+
+        :global(.arrow-button) {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 100ms ease;
+            user-select: none;
+
+            &:hover {
+                background-color: rgba(#fff, 0.1);
+            }
+
+            &:active {
+                background-color: rgba(#fff, 0.15);
+            }
+        }
+    }
+}
+
+.fullscreen-image-gallery-modal {
+    width: 80vw;
+    max-width: 80vw;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    padding: 16px 0 16px 0;
+
+    --bs-modal-border-radius: 0; 
+    --bs-modal-border-width: 0;
+    --bs-modal-bg: transparent;
+    --bs-modal-header-border-width: 0;
+    --bs-modal-footer-border-width: 0;
+}
+
+.fullscreen-image-gallery-modal-backdrop {
+    --bs-backdrop-bg: transparent;
+    --bs-backdrop-opacity: 1;
+    
+    &::before {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, 0.4);
+        backdrop-filter: blur(25px);
+    }
+}

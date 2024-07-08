@@ -1,0 +1,11 @@
+version: '2.26'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: dreamgarden-ui
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/app'

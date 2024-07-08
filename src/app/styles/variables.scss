@@ -1,0 +1,20 @@
+$primary: #DAEAC1;
+$primaryShade: #6E7858;
+$primaryTaint: #A3B382;
+
+$secondary: #FFF0E4;
+$secondaryShade: #F9C194;
+
+$error: #DC7474;
+
+$spacer: 8px; // Default is 1rem, change this to change the base spacing
+$spacers: (
+  0: 0,
+  1: $spacer,
+  2: ($spacer * 2),
+  3: ($spacer * 3),
+  4: ($spacer * 4),
+  5: ($spacer * 5)
+);
+
+$primaryBorderRadius: 6px;

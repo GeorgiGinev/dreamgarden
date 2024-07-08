@@ -1,0 +1,47 @@
+{
+    "Header": {
+      "Logo": "Dream garden",
+      "logoText": "Our Logo",
+      "virtualTour": "Virtual Tour",
+      "gallery": "Gallery",
+      "services": "Services",
+      "aboutUs": "About Us",
+      "contacts": "Contacts"
+    },
+    "Home": {
+      "askUs": "Ask Us",
+      "servicesBoxOur": "Our",
+      "servicesBoxServices": "Services",
+      "servicesBoxDescription" : "Hidden among centuries-old plane trees and a fluffy carpet of freshly mowed grass, the Enchanted Garden is the touch of magic that will transform your event into a unique and unparalleled celebration of the senses. Just 20 km from Sofia, the location combines the conveniences of the big city with a cozy, picturesque atmosphere under the stars.",
+      "servicesWeddings": "Weddings",
+      "servicesWeddingsDescription": "Unique outdoor atmosphere, covered restaurant area, boutique apartment for preparation.",
+      "servicesTeambuilding": "Teambuilding",
+      "servicesTeambuildingDescription": "Remote office or team building among majestic plane trees, forest freshness, and a fairy-tale setting.",
+      "servicesParties": "Parties",
+      "servicesPartiesDescription": "The occasion does not matter - The Enchanted Garden is wide open and ready to embrace a private party.",
+      "factsBoxKey": "Key",
+      "factsBoxFacts": "Facts",
+      "locationBoxConvenient": "Convenient",
+      "locationBoxLocation": "Location",
+      "locationHomeAddressTitle": "Specific Address",
+      "locationHomeContactTitle": "Contacts"
+    },
+    "ContactForm": {
+      "contactFormPrimaryTitle": "Question",
+      "contactFormSecondaryTitle": "Ask",
+      "contactFormInputName": "Name",
+      "contactFormInputPhoneNumber": "Phone number",
+      "contactFormInputEmail": "Email",
+      "contactFormInputDate": "Preferred date",
+      "contactFormInputNote": "Note",
+      "contactFormSendButton": "Send"
+    },
+    "Footer": {
+      "footerServices": "Services",
+      "footerServicesOne": "Weddings",
+      "footerServicesTwo": "Teambuilding",
+      "footerServicesThree": "Parties",
+      "footerContacts": "Contacts",
+      "footerFollowUs": "Follow us on"
+    }
+  }

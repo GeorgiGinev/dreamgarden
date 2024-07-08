@@ -1,0 +1,12 @@
+.container {
+    :global(.secondary-text) {
+        font-family: "Corinthia", sans-serif;
+        line-height: 1;
+    }
+    
+    :global(.primary-text) {
+        font-family: "Felidae", sans-serif;
+        line-height: 1;
+        padding-left: 46px;;
+    }
+}

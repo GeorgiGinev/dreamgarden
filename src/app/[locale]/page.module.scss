@@ -1,0 +1,12 @@
+.container {
+    display: block;
+
+    :global(.container-wrapper) {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top right;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}

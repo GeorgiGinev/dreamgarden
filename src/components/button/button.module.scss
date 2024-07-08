@@ -1,0 +1,11 @@
+.container {
+    :global(.btn) {
+        padding: 14px 48px;
+        line-height: 1;
+        font-size: 16px;
+    }
+
+    :global(.btn-primary) {
+        color: $primaryShade;
+    }
+}
