@@ -27,7 +27,6 @@ export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = process.env.API_URL + 'contact';
     
-    console.log('request t : ', request)
     return NextResponse.rewrite(url);
   }
 }
