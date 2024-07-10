@@ -7,7 +7,6 @@ import HomeServicesGrid from "./components/services-grid/services-grid";
 import HomeKeyFacts from "./components/key-facts-grid/key-facts-grid";
 import Button from "@/components/button/button";
 import HomeLocation from "./components/location/location";
-import ContactForm from "@/components/contact-form/contact-form";
 
 export default function Home() {
   const homeTranslations = useTranslations('Home');
@@ -17,7 +16,7 @@ export default function Home() {
       <HomeCarouselComponent></HomeCarouselComponent>
       <section className="container-wrapper"
         style={{
-          backgroundImage: 'url("./images/our_services.png")'
+          backgroundImage: 'url("/images/our_services.png")'
         }}
       >
         <Container className="py-4">
@@ -35,7 +34,7 @@ export default function Home() {
       </section>
       <section className="container-wrapper"
         style={{
-          backgroundImage: 'url("./images/facts.png")'
+          backgroundImage: 'url("/images/facts.png")'
         }}
       >
         <Container className="py-4 overflow-hidden">
@@ -64,9 +63,6 @@ export default function Home() {
           </Row>
           <HomeLocation></HomeLocation>
         </Container>
-      </section>
-      <section>
-        <ContactForm></ContactForm>
       </section>
     </main>
   );

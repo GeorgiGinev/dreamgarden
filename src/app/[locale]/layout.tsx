@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
 import "../styles/globals.scss";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import Header from "@/components/header/header";
 import FullScreenImageGalleryProvider from "@/components/fullscreen-image-gallery/fullscreen-image-gallery.provider";
 import Footer from "@/components/footer/footer";
-
-interface RootLayoutProps {
-  children: ReactNode;
-  params: { locale: string };
-}
+import { LayoutInterface } from "@/interfaces/layout.interface";
+import ContactForm from "@/components/contact-form/contact-form";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +15,8 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({
   children, params
-}: RootLayoutProps) => {
-  const locale = params.locale || 'en';
+}: LayoutInterface) => {
+  const locale = params?.locale || 'en';
   const messages = await getMessages();
   
   return (
@@ -30,6 +26,9 @@ const RootLayout = async ({
           <FullScreenImageGalleryProvider>
             <Header></Header>
             {children}
+            <section>
+              <ContactForm></ContactForm>
+            </section>
             <Footer></Footer>
           </FullScreenImageGalleryProvider>
         </NextIntlClientProvider>

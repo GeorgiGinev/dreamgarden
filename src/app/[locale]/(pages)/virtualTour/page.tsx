@@ -1,8 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const Page = () => {
     return (
-        <div>
+        <Container>
             <h1>Hello! Update</h1>
-        </div>
+        </Container>
     )
 }
 
