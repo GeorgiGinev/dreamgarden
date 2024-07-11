@@ -26,6 +26,14 @@
       "locationHomeAddressTitle": "Точен адрес",
       "locationHomeContactTitle": "Контакти"
     },
+    "Gallery": {
+      "primaryPageTitle": "Галерия",
+      "secondaryPageTitle": "Вижте ни в..."
+    },
+    "VirtualTour": {
+      "primaryPageTitle": "Тур",
+      "secondaryPageTitle": "Виртуален"
+    },
     "ContactForm": {
       "contactFormPrimaryTitle": "Изпрати",
       "contactFormSecondaryTitle": "Запитване",
