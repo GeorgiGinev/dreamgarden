@@ -1,6 +1,6 @@
 "use client"
 
-import { Carousel, CarouselCaption, CarouselItem } from "react-bootstrap";
+import { Carousel, CarouselItem } from "react-bootstrap";
 import styles from "./carousel.module.scss"
 import Button from "@/components/button/button";
 import { useTranslations } from "next-intl";

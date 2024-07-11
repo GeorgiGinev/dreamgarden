@@ -1,5 +1,3 @@
-"use client"
-
 import { SectionTitleParamsInterface } from "./section-title-params.interface";
 import styles from "./section-title.module.scss";
 

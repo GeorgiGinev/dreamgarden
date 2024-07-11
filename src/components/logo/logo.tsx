@@ -1,5 +1,3 @@
-"use client"
-
 import { useTranslations } from "next-intl";
 import styles from "./logo.module.scss";
 import Image from "next/image";

@@ -9,7 +9,11 @@
         padding: 0;
         border: 0;
     }
-    
+
+    :global(.active-item) {
+        color: darken($secondaryShade, 10) !important;
+    }
+
     :global(.nav-link) {
         margin: 0 20px !important;
         text-transform: uppercase;
@@ -17,9 +21,15 @@
         align-items: center;
         color: #fff;
         text-decoration: none;
+        transition: color 0.1s ease;
+        user-select: none;
 
         :global(.btn) {
             text-transform: uppercase;
+        }
+
+        &:hover, &.active-item {
+            color: darken($secondaryShade, 10);
         }
     }
 }

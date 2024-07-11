@@ -1,10 +1,10 @@
 "use client"
 
-import { Container, Nav, NavDropdown, NavLink, Navbar } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import Logo from "../logo/logo";
 import { NavigationItemInterface } from "./navigation-item.interface";
 import { NavigationItemType } from "@/enums/navigation-item.enum";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./navigation.module.scss"
 import { useTranslations } from "next-intl";
 import Button from "../button/button";
@@ -14,6 +14,8 @@ import Link from "next/link";
 
 const Navigation = () => {
     const router = useRouter();
+    const pathName = usePathname();
+    console.log('pathName : ', pathName);
     const [isOpen, setOpen] = useState(false)
     const t = useTranslations("Header");
     const translationsHome = useTranslations("Home");
@@ -22,14 +24,12 @@ const Navigation = () => {
         {
             name: t("virtualTour"),
             type: NavigationItemType.Button,
-            url: 'virtualTour'
+            url: 'virtualTour',
         },
         {
             name: t("gallery"),
             type: NavigationItemType.Button,
-            action: () => {
-                router.push('/home')
-            },
+            url: 'gallery'
         },
         {
             name: t("services"),
@@ -68,7 +68,7 @@ const Navigation = () => {
                         {items.map((item, index) => {
                             if(!item.children || item.children.length === 0) {
                                 return (
-                                    <Link className="nav-link" key={index} onClick={item.action} href={item.url ?? ''}>
+                                    <Link className={`nav-link${pathName.includes(item.url as string) ? ' active-item' : ''}`} key={index} onClick={item.action} href={item.url ?? ''}>
                                         {item.name}
                                     </Link>
                                 )
