@@ -8,6 +8,10 @@
       "aboutUs": "About Us",
       "contacts": "Contacts"
     },
+    "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, bg {🇧🇬} en {🇺🇸} other {Unknown}}"
+    },
     "Home": {
       "askUs": "Ask Us",
       "servicesBoxOur": "Our",
@@ -32,7 +36,12 @@
     },
     "VirtualTour": {
       "primaryPageTitle": "Tour",
-      "secondaryPageTitle": "Virtual"
+      "secondaryPageTitle": "Virtual",
+      "startTour": "Start Tour"
+    },
+    "AskUs": {
+      "primaryPageTitle": "Question",
+      "secondaryPageTitle": "Send"
     },
     "ContactForm": {
       "contactFormPrimaryTitle": "Question",

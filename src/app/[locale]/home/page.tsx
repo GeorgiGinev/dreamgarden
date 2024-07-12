@@ -45,11 +45,6 @@ export default function Home() {
             <Col md={6}></Col>
           </Row>
           <HomeKeyFacts></HomeKeyFacts>
-          <div className="text-center mt-4">
-            <Button>
-              {homeTranslations('askUs')}
-            </Button>
-          </div>
         </Container>
       </section>
       <section>

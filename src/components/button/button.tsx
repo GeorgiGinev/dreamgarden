@@ -1,6 +1,3 @@
-"use client"
-
-import { ReactNode } from "react";
 import { Button as BootstrapButton } from "react-bootstrap";
 import { ButtonParamsInterface } from "./button-params.interface";
 import styles from "./button.module.scss";

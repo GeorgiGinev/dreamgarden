@@ -32,7 +32,16 @@
     },
     "VirtualTour": {
       "primaryPageTitle": "Тур",
-      "secondaryPageTitle": "Виртуален"
+      "secondaryPageTitle": "Виртуален",
+      "startTour": "Започни тур"
+    },
+    "AskUs": {
+      "primaryPageTitle": "Запитване",
+      "secondaryPageTitle": "Изпрати"
+    },
+    "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, bg {🇧🇬} en {🇺🇸} other {Unknown}}"
     },
     "ContactForm": {
       "contactFormPrimaryTitle": "Изпрати",
