@@ -14,7 +14,7 @@ const Page = () => {
                 <Row className="align-items-end">
                     <Col lg={2}></Col>
                     <Col lg={6}>
-                        Отправете се на дигитална разходка из всяко кътче на Приказната градина – масивната, дървена шатра, която оживява в луксозен ресторант, поляната на любовта, идеална за открит ритуал, зоната за отдих и сладки приказки, безброй неповторими кътове за снимки и още.    
+                        {translationsVirtualTour('description')}
                     </Col>
                     <Col lg={2}>
                         <Image src={`/images/grass.png`} alt="Grass" fluid></Image>

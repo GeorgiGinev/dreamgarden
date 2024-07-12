@@ -37,11 +37,16 @@
     "VirtualTour": {
       "primaryPageTitle": "Tour",
       "secondaryPageTitle": "Virtual",
-      "startTour": "Start Tour"
+      "startTour": "Start Tour",
+      "description": "Take a digital walk through every corner of the Fairytale Garden – the massive, wooden marquee that comes to life in a luxury restaurant, the love meadow perfect for an outdoor ritual, the relaxation and sweet talk area, countless unique photo spots and more."
     },
     "AskUs": {
       "primaryPageTitle": "Question",
       "secondaryPageTitle": "Send"
+    },
+    "Contacts": {
+      "primaryPageTitle": "Contacts",
+      "secondaryPageTitle": "Our"
     },
     "ContactForm": {
       "contactFormPrimaryTitle": "Question",
