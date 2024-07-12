@@ -32,4 +32,11 @@
             color: darken($secondaryShade, 10);
         }
     }
+
+    :global(.navbar-collapse) {
+        @media screen and (max-width: 1200px) {
+            padding: 12px 0;   
+            background-color: $primaryTaint;
+        }
+    }
 }

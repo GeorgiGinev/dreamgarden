@@ -5,7 +5,7 @@ import PageContext from "../page.context";
 import { useTranslations } from "next-intl";
 
 const Title = () => {
-    const translation = useTranslations('Gallery')
+    const translation = useTranslations('AskUs')
     const {setPrimaryTitle, setSecondaryTitle} = useContext(PageContext);
     
     useEffect(() => {
@@ -13,7 +13,7 @@ const Title = () => {
         setSecondaryTitle(translation('secondaryPageTitle'));
     });
 
-    return(<div>asd</div>);
+    return(<></>);
 }
 
 export default Title;

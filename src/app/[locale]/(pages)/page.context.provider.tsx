@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import PageContext from "./page.context";
 import SectionTitle from "@/components/section-title/section-title";
-import styles from './layout.module.scss';
+import styles from './page.context.provider.module.scss';
 import { Container, Image } from "react-bootstrap";
 import AOS from 'aos';
 import { AnimationsDurationEnum } from "@/enums/animations-duration.enum";
@@ -13,8 +13,8 @@ interface PageContextProviderInterface {
 }
 
 const PageContextProvider = ({children}: PageContextProviderInterface) => {
-    const [primaryTitle, setPrimaryTitle] = useState('сад');
-    const [secondaryTitle, setSecondaryTitle] = useState('Виртуален');
+    const [primaryTitle, setPrimaryTitle] = useState('');
+    const [secondaryTitle, setSecondaryTitle] = useState('');
 
     useEffect(() => {
         const newLocal = AnimationsDurationEnum.Primary;
@@ -41,9 +41,11 @@ const PageContextProvider = ({children}: PageContextProviderInterface) => {
                         <SectionTitle primrayTitle={primaryTitle} primaryTitleClass={`text-white ${styles['primary-page-title']}`} secondaryTitle={secondaryTitle} secondaryTitleClass={`text-white ${styles['secondary-page-title']}`}></SectionTitle>
                     </div>
                 </Container>
-                <Image data-aos="fade-in" style={{
-                    opacity: 0.4
-                }} src="/images/page_header.png" alt="Page Header" fluid />
+                <div data-aos={`fade-in`} className={`${styles['image-container']}`}>
+                    <Image style={{
+                        opacity: 0.4
+                    }} src="/images/page_header.png" alt="Page Header" />
+                </div>
                 <div className={styles['footer-container']}></div>
             </div>
             {children}

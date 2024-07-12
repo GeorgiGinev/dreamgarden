@@ -11,11 +11,11 @@ import Button from "../button/button";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
 import Link from "next/link";
+import LocaleSwitcher from "../localSwitcher/locale-switcher";
 
 const Navigation = () => {
     const router = useRouter();
     const pathName = usePathname();
-    console.log('pathName : ', pathName);
     const [isOpen, setOpen] = useState(false)
     const t = useTranslations("Header");
     const translationsHome = useTranslations("Home");
@@ -90,10 +90,13 @@ const Navigation = () => {
                                 )
                             }
                         })}
-                        <Nav.Link>
+                        <Link className="nav-link" href="askUs">
                             <Button>
                                 {translationsHome('askUs')}
                             </Button>
+                        </Link>
+                        <Nav.Link>
+                            <LocaleSwitcher />
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

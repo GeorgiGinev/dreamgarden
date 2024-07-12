@@ -7,9 +7,14 @@ import { Col, Row } from "react-bootstrap";
 import AOS from 'aos';
 import { ImageInterface } from "@/interfaces/image.interface";
 import { useFullScreenImageGalleryContext } from "@/components/fullscreen-image-gallery/fullscreen-image-gallery.context";
+import Button from "@/components/button/button";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const HomeKeyFacts = () => {
     const { setImage, setImagesList } = useFullScreenImageGalleryContext();
+    const router = useRouter();
+    const t = useTranslations('Home')
 
     const images: ImageInterface[] = [
         {
@@ -42,6 +47,7 @@ const HomeKeyFacts = () => {
       }, [])
       
     return (
+        <section>
             <Row className="mt-4">
                 {images.map((image: ImageInterface, index: number) => {
                     const isMiddle = index !== 0 && index < images.length-1;
@@ -90,6 +96,14 @@ const HomeKeyFacts = () => {
                     );
                 })}
             </Row>
+            <div className="text-center mt-4">
+                <Button onClick={() => {
+                    router.push('askUs')
+                }}>
+                    {t('askUs')}
+                </Button>
+            </div>
+        </section>
     )
 }
 

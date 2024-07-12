@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    cursor: pointer;
+}
+
+.play-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($primary, 0.3);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

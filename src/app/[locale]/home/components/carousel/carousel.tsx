@@ -9,8 +9,10 @@ import AOS from 'aos';
 import { AnimationsDurationEnum } from "@/enums/animations-duration.enum";
 import { HomeCarouselImageInterface } from "./carousel.interface";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const HomeCarouselComponent = () => {
+    const router = useRouter();
     const t = useTranslations('Home')
 
     const imageList: HomeCarouselImageInterface[] = [
@@ -57,7 +59,9 @@ const HomeCarouselComponent = () => {
                     })}
                 </Carousel>
                 <div className="ask-us-wrapper">
-                    <Button>
+                    <Button onClick={() => {
+                        router.push('askUs')
+                    }}>
                         {t('askUs')}
                     </Button>
                 </div>

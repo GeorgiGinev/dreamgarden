@@ -1,19 +1,38 @@
+$headerHeight: 351px;
+
 .container {
-    height: 351px;
+    height: $headerHeight;
     overflow: hidden;
     position: relative;
     background-color: $primary;
+    z-index: 0;
 }
 
 .primary-page-title {
+    z-index: -1;
     font-size: 64px;
     filter: drop-shadow(4px 4px 12px rgba(#000000, 0.5));
 }
 
 .secondary-page-title {
+    z-index: -1;
     font-size: 72px;
     text-align: right;
     filter: drop-shadow(4px 4px 12px rgba(#000000, 0.5));
+}
+
+.image-container {
+    @media only screen and (max-width: 982px) {
+        :global(img) {
+            max-height: $headerHeight;
+        }
+    }
+
+    @media only screen and (min-width: 982px) {
+        :global(img) {
+            max-width: 100%;
+        }
+    }
 }
 
 .footer-container {
