@@ -33,11 +33,16 @@
     "VirtualTour": {
       "primaryPageTitle": "Тур",
       "secondaryPageTitle": "Виртуален",
-      "startTour": "Започни тур"
+      "startTour": "Започни тур",
+      "description": "Отправете се на дигитална разходка из всяко кътче на Приказната градина – масивната, дървена шатра, която оживява в луксозен ресторант, поляната на любовта, идеална за открит ритуал, зоната за отдих и сладки приказки, безброй неповторими кътове за снимки и още."
     },
     "AskUs": {
       "primaryPageTitle": "Запитване",
       "secondaryPageTitle": "Изпрати"
+    },
+    "Contacts": {
+      "primaryPageTitle": "Контакти",
+      "secondaryPageTitle": "Нашите"
     },
     "LocaleSwitcher": {
       "label": "Change language",
