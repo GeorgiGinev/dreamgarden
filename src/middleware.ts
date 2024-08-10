@@ -6,6 +6,7 @@ export const config = {
 };
 
 export function middleware(request: NextRequest) {
+  console.log('request server ', request)
   const handleI18nRouting = createMiddleware({
     // Лист от езици
     locales: ['en', 'bg'],
