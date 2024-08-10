@@ -10,15 +10,15 @@ export function createImageMock(params: Partial<ImageInterface> | null = null): 
     }
 }
 
-export function createImageMocks(): ImageInterface[] {
+export function createImageMocks(params: Partial<ImageInterface> | null = null): ImageInterface[] {
     return [
-        createImageMock({id: '1'}),
-        createImageMock({id: '2'}),
-        createImageMock({id: '3'}),
-        createImageMock({id: '4'}),
-        createImageMock({id: '5'}),
-        createImageMock({id: '6'}),
-        createImageMock({id: '7'}),
-        createImageMock({id: '8'}),
+        createImageMock({id: params?.id || '1', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '2', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '3', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '4', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '5', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '6', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '7', primaryURL: params?.primaryURL, sizes: params?.sizes}),
+        createImageMock({id: params?.id || '8', primaryURL: params?.primaryURL, sizes: params?.sizes}),
     ]
 };
