@@ -1,11 +1,12 @@
-import { Container } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Title from "./title";
+import GalleryImages from "./gallery-images/gallery-images";
 
-const Page = () => {
+const Page = async () => {
     return (
         <Container>
             <Title></Title>
-            <h1>Hello! Update</h1>
+            <GalleryImages></GalleryImages>
         </Container>
     )
 }
