@@ -39,7 +39,19 @@ class RequestParamsService {
             return '';
         }
 
-        return JSON.stringify(this.params);
+        return this.getParamsAsString();
+    }
+
+    private getParamsAsString(): string {
+        let paramsAsString: string = '';
+        Object.keys(this.params).forEach((key: string, index: number) => {
+            paramsAsString += key + '=' + this.params[key];
+            if(index < Object.keys(this.params).length-1) {
+                paramsAsString += '&'
+            }
+        });
+          
+        return paramsAsString;
     }
 }
 

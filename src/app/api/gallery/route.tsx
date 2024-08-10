@@ -4,16 +4,29 @@ import { createGalleryMock } from "@/services/gallery/mocks/gallery.mock";
 import { createGrid } from "@/services/gallery/mocks/generator";
 import { NextRequest, NextResponse } from "next/server";
 import CustomRequest from "../services/request/request";
+import { createImageMocks } from "@/services/image/mocks/image.mock";
+import createImageSizeMock from "@/services/image/mocks/image-size.mock";
 
 /**
  * handle GET
  * @param req
  */
 export async function GET(request: NextRequest) {
+    const TOTAL_PAGES = 2;
+
     const customRequest = new CustomRequest(request);
-    const data = createGrid(createGalleryMock({
-        currentPage: customRequest.params.page
-    }));
-    
-    return NextResponse.json({ message: "Received POST request", data: data}, { status: 200 });
+    const gallery = createGalleryMock({
+        currentPage: customRequest.params.page,
+        totalPages: TOTAL_PAGES,
+        images: String(TOTAL_PAGES) === customRequest.params.page ? createImageMocks({
+            primaryURL: '/images/gallery/wedding.jpg',
+            sizes: [createImageSizeMock({
+                url: '/images/gallery/wedding.jpg'
+            })]
+        }) : undefined
+    });
+
+    const data = createGrid(gallery);
+
+    return NextResponse.json({ isLastPage: gallery.currentPage === gallery.totalPages, data: data}, { status: 200 });
 }

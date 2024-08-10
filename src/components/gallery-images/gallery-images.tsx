@@ -1,20 +1,23 @@
 "use client"
 
-import { Button, Col, Row } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 import styles from "./gallery-images.module.scss";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ImageInterface } from "@/interfaces/image/image.interface";
 import GalleryService from "@/services/gallery/galleryService";
+import Loading from "../../app/[locale]/(pages)/gallery/loading";
+import { GalleryImageInterface } from "./gallery-image.interface";
+import RequestParamsService from "@/services/requestParamsService";
+import { GalleryApiResponseInterface } from "@/interfaces/api/gallery-api-response.interface";
 
-const GalleryImages = () => {
+const GalleryImages = (params: GalleryImageInterface) => {
     const galleryService = new GalleryService();
-
-    const [currentPage, setCurrentPage] = useState(1);
     const [imagesGrid, setImagesGrid] = useState([])
 
     useEffect(() => {
-        loader
-        .then((data: any) => {
+        galleryService.getGalleryImages(new RequestParamsService({page: params.page}))
+        .then((data: GalleryApiResponseInterface) => {
+            console.log('gallery data', data.data)
             setImagesGrid(data.data);
         })
     }, [])
@@ -50,16 +53,11 @@ const GalleryImages = () => {
         })
     }
 
-    const loadMoreImages = () => {
-        setCurrentPage(currentPage+1);
-    }
-
-    const loader: Promise<any> = galleryService.getGalleryImages();
-
     return (
         <div>
-            {generateGrid(imagesGrid, true)}
-            <Button onClick={() => {loadMoreImages()}}>Load</Button>
+            <Suspense fallback={<Loading />}>
+                {generateGrid(imagesGrid, true)}
+            </Suspense>
         </div>
     )
 }
