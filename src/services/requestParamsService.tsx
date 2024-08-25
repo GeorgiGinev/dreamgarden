@@ -30,6 +30,10 @@ class RequestParamsService {
         return this.params[key];
     }
 
+    public getParamsAsAnObject(): any {
+        return this.params;
+    }
+
     /**
      * Get all params
      * @returns 

@@ -12,7 +12,7 @@ import createImageSizeMock from "@/services/image/mocks/image-size.mock";
  * @param req
  */
 export async function GET(request: NextRequest) {
-    const TOTAL_PAGES = 2;
+    const TOTAL_PAGES = 5;
 
     const customRequest = new CustomRequest(request);
     const gallery = createGalleryMock({
@@ -28,5 +28,5 @@ export async function GET(request: NextRequest) {
 
     const data = createGrid(gallery);
 
-    return NextResponse.json({ isLastPage: gallery.currentPage === gallery.totalPages, data: data}, { status: 200 });
+    return NextResponse.json({ totalPages: gallery.totalPages, currentPage: gallery.currentPage, data: data}, { status: 200 });
 }

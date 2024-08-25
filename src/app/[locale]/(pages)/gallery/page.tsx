@@ -1,14 +1,12 @@
 import { Container} from "react-bootstrap";
 import Title from "./title";
-import GalleryImages from "../../../../components/gallery-images/gallery-images";
-import { Swiper, SwiperSlide } from "swiper/react";
-import GallerySwiper from "./gallery-swiper";
+import GalleryComponent from "./gallery.components";
 
 const Page = () => {
     return (
         <Container>
             <Title></Title>
-            <GallerySwiper />
+            <GalleryComponent></GalleryComponent>
         </Container>
     )
 }

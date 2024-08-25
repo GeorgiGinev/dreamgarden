@@ -1,4 +1,6 @@
 export interface GalleryApiResponseInterface {
-    isLastPage: boolean,
-    data: any
+    totalPages: number,
+    currentPage: number,
+    data: any,
+    isLoading: boolean,
 }

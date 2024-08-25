@@ -5,7 +5,6 @@ import SectionTitle from "@/components/section-title/section-title";
 import { useTranslations } from "next-intl";
 import HomeServicesGrid from "./components/services-grid/services-grid";
 import HomeKeyFacts from "./components/key-facts-grid/key-facts-grid";
-import Button from "@/components/button/button";
 import HomeLocation from "./components/location/location";
 
 export default function Home() {
