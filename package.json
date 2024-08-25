@@ -21,11 +21,12 @@
     "react-dom": "^18",
     "react-loading-skeleton": "^3.4.0",
     "sass": "^1.77.2",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.9",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
-    "@types/node": "^20",
+    "@types/node": "^20.14.15",
     "@types/react": "^18",
     "@types/react-animate-on-scroll": "^2.1.8",
     "@types/react-dom": "^18",

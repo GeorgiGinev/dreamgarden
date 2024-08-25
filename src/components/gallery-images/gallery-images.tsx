@@ -2,25 +2,31 @@
 
 import { Col, Row } from "react-bootstrap"
 import styles from "./gallery-images.module.scss";
-import { Suspense, useEffect, useState } from "react";
 import { ImageInterface } from "@/interfaces/image/image.interface";
-import GalleryService from "@/services/gallery/galleryService";
 import Loading from "../../app/[locale]/(pages)/gallery/loading";
 import { GalleryImageInterface } from "./gallery-image.interface";
+import { useSwiperSlide } from "swiper/react";
+import GalleryService from "@/services/gallery/galleryService";
 import RequestParamsService from "@/services/requestParamsService";
-import { GalleryApiResponseInterface } from "@/interfaces/api/gallery-api-response.interface";
+import { useEffect, useState } from "react";
+
 
 const GalleryImages = (params: GalleryImageInterface) => {
+    const [images, setImages] = useState<any>(params.data);
+    const { isNext } = useSwiperSlide();
+
     const galleryService = new GalleryService();
-    const [imagesGrid, setImagesGrid] = useState([])
+    const {data} = galleryService.getGalleryImages(new RequestParamsService({page: params.page}), isNext);
 
     useEffect(() => {
-        galleryService.getGalleryImages(new RequestParamsService({page: params.page}))
-        .then((data: GalleryApiResponseInterface) => {
-            console.log('gallery data', data.data)
-            setImagesGrid(data.data);
-        })
-    }, [])
+        if (data) {
+            setImages(data);
+          }
+    }, [data]);
+
+    if(!images) {
+        return (<Loading />)
+    }
 
     const generateGrid = (grid: any[], isFirstRow: boolean): any => {
         return grid?.map((row: any, index: number) => {
@@ -55,9 +61,7 @@ const GalleryImages = (params: GalleryImageInterface) => {
 
     return (
         <div>
-            <Suspense fallback={<Loading />}>
-                {generateGrid(imagesGrid, true)}
-            </Suspense>
+            {generateGrid(images.data, true)}
         </div>
     )
 }

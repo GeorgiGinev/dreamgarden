@@ -13,6 +13,7 @@
             // Тук можете да дефинирате настройките за изображения
             domains: ['localhost:3000'], // Разрешени домейни за изображения
           },
+        reactStrictMode: false,
         redirects: () => {
             return [
               {
