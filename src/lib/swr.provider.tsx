@@ -1,10 +1,20 @@
 'use client';
+import { ReactNode } from 'react';
 import { SWRConfig } from 'swr'
-export const SWRProvider = ({ children }: any) => {
-  return <SWRConfig value={{ provider: localStorageProvider }}>{children}</SWRConfig>
+
+interface SWRProviderInterface {
+  children: ReactNode,
+}
+
+export const SWRProvider = (data: SWRProviderInterface) => {
+  return <SWRConfig>{data.children}</SWRConfig>
 };
 
 function localStorageProvider(): any {
+  if (typeof window === 'undefined') {
+    return new Map();
+  }
+
   // When initializing, we restore the data from `localStorage` into a map.
   const map = new Map(JSON.parse(localStorage.getItem('app-cache') || '[]'))
  
