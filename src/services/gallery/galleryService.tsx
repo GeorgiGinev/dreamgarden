@@ -12,7 +12,7 @@ class GalleryService extends ResourceService {
      * @param params 
      * @returns 
      */
-    public getGalleryImages(params: RequestParamsService | undefined = undefined, shouldLoad: boolean = true): SWRResponse<GalleryApiResponseInterface, any> {
+    public getGalleryImages(params: RequestParamsService | undefined = undefined, shouldLoad: boolean = true): Promise<GalleryApiResponseInterface> {
         return this.loadData(params ? params : new RequestParamsService({page: 1}), shouldLoad)
     }
 

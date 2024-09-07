@@ -1,4 +1,3 @@
-import useSWR, { SWRResponse, useSWRConfig } from "swr";
 import RequestParamsService from "./requestParamsService";
 import useSWRInfinite from "swr/infinite";
 
@@ -14,16 +13,8 @@ class ResourceService {
     private readonly url: string = process.env.NEXT_PUBLIC_API_URL as string;
     protected readonly resource: string = 'resource';
 
-    protected loadData(params?: RequestParamsService, shouldLoad: boolean = true): SWRResponse<any, any> {
-        const { cache } = useSWRConfig();
-
-        // Check if the data is already cached
-        const cachedData = cache.get(this.getRouteWithParamsAsString(params));
-        if(!!cachedData) {
-            return cachedData as SWRResponse;
-        }
-
-        return useSWR(shouldLoad ? this.getRouteWithParamsAsString(params) : null, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false } );
+    protected loadData(params?: RequestParamsService, shouldLoad: boolean = true): Promise<any> {
+        return fetcher(this.getRouteWithParamsAsString(params));
     }
 
     protected infiniteLoadData(params?: RequestParamsService) {

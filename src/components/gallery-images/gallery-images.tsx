@@ -3,32 +3,20 @@
 import { Col, Row } from "react-bootstrap"
 import styles from "./gallery-images.module.scss";
 import { ImageInterface } from "@/interfaces/image/image.interface";
-import Loading from "../../app/[locale]/(pages)/gallery/loading";
 import { GalleryImageInterface } from "./gallery-image.interface";
-import { useSwiperSlide } from "swiper/react";
-import GalleryService from "@/services/gallery/galleryService";
-import RequestParamsService from "@/services/requestParamsService";
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect } from "react";
+import { GalleryContextInterface } from "@/app/[locale]/(pages)/gallery/gallery.context.interface";
+import GalleryContext from "@/app/[locale]/(pages)/gallery/gallery.context";
+import Loading from "@/app/[locale]/(pages)/gallery/loading";
 
 const GalleryImages = (params: GalleryImageInterface) => {
-    const [images, setImages] = useState<any>(params.data);
-    const { isNext } = useSwiperSlide();
-
-    const galleryService = new GalleryService();
-    const {data} = galleryService.getGalleryImages(new RequestParamsService({page: params.page}), isNext);
-
-    useEffect(() => {
-        if (data) {
-            setImages(data);
-          }
-    }, [data]);
-
-    if(!images) {
-        return (<Loading />)
-    }
+    const {images, currentPage} = useContext<GalleryContextInterface>(GalleryContext);
 
     const generateGrid = (grid: any[], isFirstRow: boolean): any => {
+        if(!grid) {
+            return;
+        }
+
         return grid?.map((row: any, index: number) => {
             if(Array.isArray(row)) {
                 if(!isFirstRow) {
@@ -59,9 +47,13 @@ const GalleryImages = (params: GalleryImageInterface) => {
         })
     }
 
+    if(!images || !currentPage) {
+        return (<Loading />);
+    }
+
     return (
         <div>
-            {generateGrid(images.data, true)}
+            {generateGrid(images[params.page - 1]?.data, true)}
         </div>
     )
 }

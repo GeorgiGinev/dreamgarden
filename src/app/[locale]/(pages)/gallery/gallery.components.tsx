@@ -8,36 +8,50 @@ import Loading from "./loading";
 
 import 'swiper/css';
 import { SWRProvider } from "@/lib/swr.provider";
+import Button from "@/components/button/button";
+import { useEffect, useState } from "react";
 
 const GalleryComponent = () => {
     const galleryService = new GalleryService();
-    
+
     const { data } = galleryService.getGalleryImages(new RequestParamsService({page: 1}));
+    console.log('data : ', data)
 
     if(!data) {
-        return <Loading />
+        return (
+            <div>
+                asd
+                <Loading />
+            </div>
+        )
     }
 
-    return (
-        <SWRProvider>
-            <div>
-            <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-        >
-            <SwiperSlide key={0}>
-                <GalleryImages page={1} data={data}></GalleryImages>
-            </SwiperSlide>
+    console.log('asd tro')
 
-            {Array(data?.totalPages-1).fill(undefined)?.map((value: undefined, index: number) => {
-                return(
-                    <SwiperSlide key={index+1}>
-                        <GalleryImages page={index+2}></GalleryImages>
-                    </SwiperSlide>
-                )
-            })}
-        </Swiper>
-        </div>
+    return ( 
+        <SWRProvider>
+            SWRProvider
+            <div>
+                <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+            >
+                {/* <SwiperSlide key={0}>
+                    <GalleryImages page={1} data={data}></GalleryImages>
+                </SwiperSlide> */}
+
+                {/* {Array((data as any).totalPages-1).fill(undefined)?.map((value: undefined, index: number) => {
+                    return(
+                        <SwiperSlide key={index+1}>
+                            <GalleryImages page={index+2}></GalleryImages>
+                        </SwiperSlide>
+                    )
+                })} */}
+            </Swiper>
+            <Button>
+                {'Next'}
+            </Button>
+            </div>
         </SWRProvider>
     );
 }

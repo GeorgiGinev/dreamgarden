@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const gallery = createGalleryMock({
         currentPage: customRequest.params.page,
         totalPages: TOTAL_PAGES,
-        images: String(TOTAL_PAGES) === customRequest.params.page ? createImageMocks({
+        images: String(TOTAL_PAGES) === customRequest.params.page || customRequest.params.page === '1' ? createImageMocks({
             primaryURL: '/images/gallery/wedding.jpg',
             sizes: [createImageSizeMock({
                 url: '/images/gallery/wedding.jpg'
