@@ -1,13 +1,11 @@
 "use client"
 
-import { ImageInterface } from "@/interfaces/image.interface";
 import { ReactNode, useEffect, useState } from "react";
 import FullScreenImageGalleryContext from "./fullscreen-image-gallery.context";
 import { CloseButton, Image, Modal, ModalBody, ModalFooter, ModalHeader } from "react-bootstrap";
 import styles from './fullscreen-image.gallery.module.scss';
-import Button from "../button/button";
 import { Icons } from "@/enums/icons-enum";
-import { error } from "console";
+import { ImageInterface } from "@/interfaces/image/image.interface";
 
 interface FullScreenImageGalleryProvicerInterface {
     children: ReactNode
@@ -56,11 +54,12 @@ const FullScreenImageGalleryProvider = ({children}: FullScreenImageGalleryProvic
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        <Image src={image.url} alt={image.name} style={{
+                        <Image src={image.primaryURL} alt={image.name} style={{
                             maxHeight: '100%'
                         }} fluid />;
                     </div> : null}
                 </ModalBody>
+                {!imagesList || imagesList?.length > 0 ? 
                 <ModalFooter>
                     <div className="arrow-button" onClick={() => {
                         if(!imagesList) {
@@ -100,7 +99,7 @@ const FullScreenImageGalleryProvider = ({children}: FullScreenImageGalleryProvic
                     }}>
                         <Image src={Icons.ArrowLeft} width={18} height={32} />
                     </div>
-                </ModalFooter>
+                </ModalFooter> : ''}
             </Modal>
             </div>
         </FullScreenImageGalleryContext.Provider>

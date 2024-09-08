@@ -1,7 +1,8 @@
 import { Container} from "react-bootstrap";
 import Title from "./title";
-import GalleryComponent from "./gallery.components";
 import GalleryProvider from "./gallery.provider";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const Page = () => {
     return (

@@ -1,4 +1,4 @@
-import { ImageInterface } from "@/interfaces/image.interface";
+import { ImageInterface } from "@/interfaces/image/image.interface";
 
 export interface FullScreenImageGalleryContextInterface {
     image: ImageInterface | null,

@@ -8,8 +8,10 @@ import { useContext, useEffect } from "react";
 import { GalleryContextInterface } from "@/app/[locale]/(pages)/gallery/gallery.context.interface";
 import GalleryContext from "@/app/[locale]/(pages)/gallery/gallery.context";
 import Loading from "@/app/[locale]/(pages)/gallery/loading";
+import { useFullScreenImageGalleryContext } from "../fullscreen-image-gallery/fullscreen-image-gallery.context";
 
 const GalleryImages = (params: GalleryImageInterface) => {
+    const { setImage, setImagesList } = useFullScreenImageGalleryContext();
     const {images, currentPage} = useContext<GalleryContextInterface>(GalleryContext);
 
     const generateGrid = (grid: any[], isFirstRow: boolean): any => {
@@ -38,7 +40,12 @@ const GalleryImages = (params: GalleryImageInterface) => {
             
             return(<Col md={row.size} key={(row.image as ImageInterface).id}>
                 <div className={`${styles['image-wrapper']}`}>
-                <div className={`${styles['image']}`} style={{
+                <div className={`${styles['image']}`}
+                onClick={() => {
+                    setImage(row.image as ImageInterface);
+                    setImagesList([]);
+                }}
+                style={{
                     backgroundImage: `url('${(row.image as ImageInterface).sizes[0].url}')`,
                     height: `${row.height}`
                 }}></div>
