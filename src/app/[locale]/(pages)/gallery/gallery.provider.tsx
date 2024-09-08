@@ -4,11 +4,13 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import GalleryContext from "./gallery.context";
 import GalleryService from "@/services/gallery/galleryService";
 import RequestParamsService from "@/services/requestParamsService";
-import Button from "@/components/button/button";
+import styles from './gallery.module.scss';
 import { GalleryApiResponseInterface } from "@/interfaces/api/gallery-api-response.interface";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import GalleryImages from "@/components/gallery-images/gallery-images";
+import Loading from "./loading";
+import Image from "next/image";
 
 interface GalleryProviderInterface {
     children?: ReactNode
@@ -56,6 +58,10 @@ const GalleryProvider = (data: GalleryProviderInterface) => {
         }
     };
 
+    if(gallery.length === 0) {
+        return (<Loading />);
+    }
+
     return(
         <GalleryContext.Provider value={{ images: gallery, currentPage: page}}>
             <Swiper
@@ -77,16 +83,18 @@ const GalleryProvider = (data: GalleryProviderInterface) => {
             </Swiper>
             
             {data.children}
-            <Button onClick={() => {
-                increment();
-            }}>
-                Increment
-            </Button>
-            <Button onClick={() => {
+            <div className="d-flex justify-content-center">
+            <div className={styles['swiper-buttons']} onClick={() => {
                 decrement();
             }}>
-                Decrement
-            </Button>
+                <Image src={'/images/icons/arrow-left.svg'} alt="Go to the prev images" width={32} height={32} />
+            </div>
+            <div className={styles['swiper-buttons']} onClick={() => {
+                increment();
+            }}>
+                <Image src={'/images/icons/arrow-right.svg'} alt="Go to the next images" width={32} height={32} />
+            </div>
+            </div>
         </GalleryContext.Provider>
     );
 }

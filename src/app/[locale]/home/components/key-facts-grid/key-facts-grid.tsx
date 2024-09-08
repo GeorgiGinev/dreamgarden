@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import AOS from 'aos';
-import { ImageInterface } from "@/interfaces/image.interface";
 import { useFullScreenImageGalleryContext } from "@/components/fullscreen-image-gallery/fullscreen-image-gallery.context";
 import Button from "@/components/button/button";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { ImageInterface } from "@/interfaces/image/image.interface";
 
 const HomeKeyFacts = () => {
     const { setImage, setImagesList } = useFullScreenImageGalleryContext();
@@ -18,19 +18,34 @@ const HomeKeyFacts = () => {
 
     const images: ImageInterface[] = [
         {
-            id: 0,
+            id: '0',
             name: "Bride",
-            url: "/images/home-facts/secondary.jpg"
+            primaryURL: "/images/home-facts/secondary.jpg",
+            sizes: [{
+                width: 500,
+                height: 500,
+                url: "/images/home-facts/secondary.jpg"
+            }]
         },
         {
-            id: 1,
+            id: '1',
             name: "Wedding",
-            url: "/images/home-facts/primary.jpg"
+            primaryURL: "/images/home-facts/primary.jpg",
+            sizes: [{
+                width: 500,
+                height: 500,
+                url: "/images/home-facts/primary.jpg"
+            }]
         },
         {
-            id: 2,
+            id: '2',
             name: "Bride",
-            url: "/images/home-facts/secondary.jpg"
+            primaryURL: "/images/home-facts/secondary.jpg",
+            sizes: [{
+                width: 500,
+                height: 500,
+                url: "/images/home-facts/secondary.jpg"
+            }]
         }
     ];
 
@@ -77,7 +92,7 @@ const HomeKeyFacts = () => {
                                 }}
                                 >
                                     <Image 
-                                        src={image.url} 
+                                        src={image.sizes[0].url} 
                                         alt={image.name}
                                         fill
                                         style={{

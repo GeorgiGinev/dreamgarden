@@ -19,6 +19,10 @@
 .fullscreen-image-gallery-modal-content {
     height: 100%;
 
+    :global(.modal-body) {
+        max-height: calc(100% - 106px);
+    }
+
     :global(.modal-header) {
         z-index: 1;
         display: flex;
