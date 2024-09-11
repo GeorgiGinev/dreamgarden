@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
+    "@svgr/webpack": "^8.1.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "hamburger-react": "^2.5.1",

@@ -34,6 +34,10 @@
       "primaryPageTitle": "Gallery",
       "secondaryPageTitle": "Check us out in..."
     },
+    "Services": {
+      "primaryPageTitle": "Services",
+      "secondaryPageTitle": "Our"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Tour",
       "secondaryPageTitle": "Virtual",

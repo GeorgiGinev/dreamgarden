@@ -34,9 +34,7 @@ const Navigation = () => {
         {
             name: t("services"),
             type: NavigationItemType.Button,
-            action: () => {
-                router.push('/home')
-            },
+            url: 'services'
         },
         {
             name: t("aboutUs"),

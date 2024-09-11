@@ -7,7 +7,6 @@ import FullScreenImageGalleryProvider from "@/components/fullscreen-image-galler
 import Footer from "@/components/footer/footer";
 import { LayoutInterface } from "@/interfaces/layout.interface";
 import ContactForm from "@/components/contact-form/contact-form";
-import { SWRProvider } from "@/lib/swr.provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +22,6 @@ const RootLayout = async ({
   return (
     <html lang={locale}>
       <body>
-      <SWRProvider>
         <NextIntlClientProvider messages={messages}>
           <FullScreenImageGalleryProvider>
             <Header></Header>
@@ -34,7 +32,6 @@ const RootLayout = async ({
             <Footer></Footer>
           </FullScreenImageGalleryProvider>
         </NextIntlClientProvider>
-        </SWRProvider>
       </body>
     </html>
   );

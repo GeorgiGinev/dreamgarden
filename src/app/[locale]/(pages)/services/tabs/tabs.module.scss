@@ -1,0 +1,32 @@
+.container {    
+    :global(.nav-item) {
+        font-size: 28px;
+        font-family: "Felidae";
+
+        :global(.nav-link) {
+            //color: black;
+        }
+
+        :global(svg) {
+            fill: $primary;
+            transition: fill 100ms ease;
+        }
+
+        :global(.active) {
+            color: black;
+            background-color: transparent;
+
+            :global(svg) {
+                fill: $primaryTaint;
+            }
+        }
+
+        &:first-child {
+            border-right: 1px solid $primaryTaint;
+        }
+
+        &:last-child {
+            border-left: 1px solid $primaryTaint;
+        }
+    }
+}

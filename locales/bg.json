@@ -30,6 +30,10 @@
       "primaryPageTitle": "Галерия",
       "secondaryPageTitle": "Вижте ни в..."
     },
+    "Services": {
+      "primaryPageTitle": "Услуги",
+      "secondaryPageTitle": "Нашите"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Тур",
       "secondaryPageTitle": "Виртуален",
