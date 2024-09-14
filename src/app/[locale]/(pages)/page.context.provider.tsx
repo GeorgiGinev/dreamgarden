@@ -16,7 +16,7 @@ const PageContextProvider = ({children}: PageContextProviderInterface) => {
     const [primaryTitle, setPrimaryTitle] = useState('');
     const [secondaryTitle, setSecondaryTitle] = useState('');
     const [pageImage, setPageImage] = useState('/images/page_header.png');
-    const [isContactFormVisible, setIsContactFormVisible] = useState<boolean>(true);
+    const [isContactFormVisible, setIsContactFormVisible] = useState<boolean>(false);
 
     return(
         <PageContext.Provider value={{primaryTitle, setPrimaryTitle, secondaryTitle, setSecondaryTitle, isContactFormVisible, setIsContactFormVisible, setPageImage}}>

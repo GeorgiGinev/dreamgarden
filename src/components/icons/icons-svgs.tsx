@@ -9,6 +9,9 @@ import PlannerIcon from '../../../public/images/icons/planner.svg';
 import TimerIcon from '../../../public/images/icons/timer.svg';
 import FacebookIcon from '../../../public/images/icons/facebook.svg';
 import InstagramIcon from '../../../public/images/icons/instagram.svg';
+import PhoneIcon from '../../../public/images/icons/phone.svg';
+import PinIcon from '../../../public/images/icons/pin.svg';
+import MailIcon from '../../../public/images/icons/mail.svg';
 
 export { 
     GroupIcon, 
@@ -21,5 +24,8 @@ export {
     PlannerIcon,
     TimerIcon,
     FacebookIcon,
-    InstagramIcon
+    InstagramIcon,
+    PhoneIcon,
+    PinIcon,
+    MailIcon,
  };

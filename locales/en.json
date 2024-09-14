@@ -67,7 +67,8 @@
     },
     "Contacts": {
       "primaryPageTitle": "Contacts",
-      "secondaryPageTitle": "Our"
+      "secondaryPageTitle": "Our",
+      "followUs": "Follow us:"
     },
     "ContactForm": {
       "contactFormPrimaryTitle": "Question",

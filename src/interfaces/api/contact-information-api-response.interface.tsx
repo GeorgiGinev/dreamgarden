@@ -8,5 +8,6 @@ export interface ContactInformationApiResponseInterface {
         lat: string,
         long: string
     },
-    socialMediaAccounts: SocialMediaApiResponseInterface[]
+    socialMediaAccounts: SocialMediaApiResponseInterface[],
+    description: string
 }
