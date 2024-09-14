@@ -38,6 +38,10 @@
       "Teambuilding": "Тиймбилдинг",
       "Parties": "Партита"
     },
+    "AboutUs": {
+      "primaryPageTitle": "Нас",
+      "secondaryPageTitle": "За"
+    },
     "ServicesWeddings": {
       "primaryImage": "Главна снимка",
       "secondaryImageOne": "Второстепенна снимка - едно",

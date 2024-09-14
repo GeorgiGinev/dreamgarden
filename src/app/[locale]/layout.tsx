@@ -5,7 +5,6 @@ import Header from "@/components/header/header";
 import FullScreenImageGalleryProvider from "@/components/fullscreen-image-gallery/fullscreen-image-gallery.provider";
 import Footer from "@/components/footer/footer";
 import { LayoutInterface } from "@/interfaces/layout.interface";
-import ContactForm from "@/components/contact-form/contact-form";
 
 const RootLayout = async ({
   children, params
@@ -15,14 +14,15 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
-      <body>
+      <body style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh'
+      }}>
         <NextIntlClientProvider messages={messages}>
           <FullScreenImageGalleryProvider>
             <Header></Header>
             {children}
-            <section>
-              <ContactForm></ContactForm>
-            </section>
             <Footer></Footer>
           </FullScreenImageGalleryProvider>
         </NextIntlClientProvider>

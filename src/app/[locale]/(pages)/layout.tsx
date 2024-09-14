@@ -3,7 +3,9 @@ import PageContextProvider from "./page.context.provider";
 
 const Layout = async ({children}: LayoutInterface) => {
     return(
-        <section>
+        <section style={{
+            flexGrow: 1
+        }}>
             <PageContextProvider>
                 {children}
             </PageContextProvider>

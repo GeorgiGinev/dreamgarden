@@ -1,12 +1,12 @@
 "use client"
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import PageContext from "./page.context";
 import SectionTitle from "@/components/section-title/section-title";
 import styles from './page.context.provider.module.scss';
 import { Container, Image } from "react-bootstrap";
-import AOS from 'aos';
-import { AnimationsDurationEnum } from "@/enums/animations-duration.enum";
+import ContactForm from "@/components/contact-form/contact-form";
+import AOSComponent from "@/components/aos/aos.component";
 
 interface PageContextProviderInterface {
     children: ReactNode
@@ -15,21 +15,12 @@ interface PageContextProviderInterface {
 const PageContextProvider = ({children}: PageContextProviderInterface) => {
     const [primaryTitle, setPrimaryTitle] = useState('');
     const [secondaryTitle, setSecondaryTitle] = useState('');
+    const [pageImage, setPageImage] = useState('/images/page_header.png');
+    const [isContactFormVisible, setIsContactFormVisible] = useState<boolean>(true);
 
-    useEffect(() => {
-        const newLocal = AnimationsDurationEnum.Primary;
-        AOS.init({
-          duration: newLocal,
-          once: true,
-        });
-
-        return () => {
-            AOS.refresh();
-        };
-      }, [])
-      
     return(
-        <PageContext.Provider value={{primaryTitle, setPrimaryTitle, secondaryTitle, setSecondaryTitle}}>
+        <PageContext.Provider value={{primaryTitle, setPrimaryTitle, secondaryTitle, setSecondaryTitle, isContactFormVisible, setIsContactFormVisible, setPageImage}}>
+            <AOSComponent></AOSComponent>
             <div className={styles.container}>
                 <Container>
                     <div style={{
@@ -44,11 +35,14 @@ const PageContextProvider = ({children}: PageContextProviderInterface) => {
                 <div data-aos={`fade-in`} className={`${styles['image-container']}`}>
                     <Image style={{
                         opacity: 0.4
-                    }} src="/images/page_header.png" alt="Page Header" />
+                    }} src={pageImage} alt="Page Header" />
                 </div>
                 <div className={styles['footer-container']}></div>
             </div>
             {children}
+            {isContactFormVisible ? <section>
+                <ContactForm></ContactForm>
+            </section> : ''}
         </PageContext.Provider>
     );
 }

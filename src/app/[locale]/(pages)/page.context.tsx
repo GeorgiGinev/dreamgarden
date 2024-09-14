@@ -7,7 +7,10 @@ const PageContext = createContext<PageTitleInterface>({
     primaryTitle: 'Primary',
     setPrimaryTitle: () => {},
     secondaryTitle: 'Secondary',
-    setSecondaryTitle: () => {}
+    setSecondaryTitle: () => {},
+    isContactFormVisible: true,
+    setIsContactFormVisible: () => {},
+    setPageImage: () => {}
 });
 
 export default PageContext;
