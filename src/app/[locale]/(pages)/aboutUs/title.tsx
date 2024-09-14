@@ -6,11 +6,12 @@ import { useTranslations } from "next-intl";
 
 const Title = () => {
     const translation = useTranslations('AboutUs')
-    const {setPrimaryTitle, setSecondaryTitle, setPageImage} = useContext(PageContext);
+    const {setPrimaryTitle, setSecondaryTitle, setPageImage, setIsContactFormVisible} = useContext(PageContext);
     
     useEffect(() => {
         setPrimaryTitle(translation('primaryPageTitle'));
         setSecondaryTitle(translation('secondaryPageTitle'));
+        setIsContactFormVisible(true);
         setPageImage('/images/page_header.png');
     });
 
