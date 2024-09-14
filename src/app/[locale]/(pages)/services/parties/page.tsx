@@ -7,6 +7,12 @@ import IconComponent from "@/components/icons/icon.component";
 import { Icons } from "@/components/icons/icons.enum";
 import styles from './page.module.scss';
 import ServicesPartiesService from "@/services/services/parties/parties.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: process.env.TITLE_PREFIX as string + ' - Parties service',
+    description: 'Parties service information'
+};
 
 const Page = async () => {
     const locale = await getLocale();

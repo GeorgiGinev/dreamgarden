@@ -1,18 +1,21 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Title from "./title";
-import { useTranslations } from "next-intl";
 import VideoTour from "./components/video-tour/video-tour";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 import RequestParamsService from "@/services/requestParamsService";
 import VirtualTourService from "@/services/virtualTour/virtualTour.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: process.env.TITLE_PREFIX as string + ' - Virtual tour',
+    description: 'Virtual tour information'
+};
 
 const Page = async () => {
     const locale = await getLocale();
 
     const videoTourService = new VirtualTourService();
     const data = await videoTourService.getVideoTour(new RequestParamsService({locale: locale}));
-
-    const translationsVirtualTour = await getTranslations('VirtualTour');
 
     return (
         <Container>
