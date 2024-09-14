@@ -1,3 +1,4 @@
+import { Col, Row } from "react-bootstrap";
 import ServicesTabs from "../tabs/tab";
 
 const Page = () => {
@@ -6,7 +7,13 @@ const Page = () => {
     return (
         <div>
             <ServicesTabs activeTab="parties"></ServicesTabs>
-            Parties
+            <Row>
+                <Col>
+                    <p>
+                    Уникална атмосфера на открито, покрита ресторантска част, бутиков апартамент за подготовка на булката, декоративни локации за снимки, място алея за изнесен ритуал. Работим с доказани професионалисти в организацията на кетъринг, музика, декорация, транспорт и други.
+                    </p>
+                </Col>
+            </Row>
         </div>
     )
 }
