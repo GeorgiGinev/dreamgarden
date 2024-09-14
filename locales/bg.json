@@ -40,7 +40,10 @@
     },
     "AboutUs": {
       "primaryPageTitle": "Нас",
-      "secondaryPageTitle": "За"
+      "secondaryPageTitle": "За",
+      "garden": "Градина",
+      "happyClients": "Доволни клиенти",
+      "partners": "Партньори"
     },
     "ServicesWeddings": {
       "primaryImage": "Главна снимка",
