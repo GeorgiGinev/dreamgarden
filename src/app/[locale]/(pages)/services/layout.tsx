@@ -1,11 +1,13 @@
 import { Container } from "react-bootstrap";
 import Title from "./title";
 import { LayoutInterface } from "@/interfaces/layout.interface";
-import ServicesTabs from "./tabs/tab";
 
 const Layout = ({ children }: LayoutInterface) => {
     return (
-    <Container>
+    <Container style={{
+        paddingTop: 72,
+        paddingBottom: 72
+    }}>
         <Title></Title>
         {children}
     </Container>

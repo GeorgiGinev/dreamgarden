@@ -37,6 +37,15 @@
       "Teambuilding": "Тиймбилдинг",
       "Parties": "Партита"
     },
+    "ServicesWeddings": {
+      "primaryImage": "Главна снимка",
+      "secondaryImageOne": "Второстепенна снимка - едно",
+      "secondaryImageTwo": "Второстепенна снимка - две",
+      "capacityOfPeople": "Капацитет до {capacity} души ",
+      "withoutComissions": "Без комисионни",
+      "withoutOvertime": "Без овъртайм",
+      "helpWithPlanning": "Помощ при планиране"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Тур",
       "secondaryPageTitle": "Виртуален",

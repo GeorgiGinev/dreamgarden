@@ -4,5 +4,18 @@ import RingIcon from '../../../public/images/icons/ring.svg';
 import ArrowRightIcon from '../../../public/images/icons/arrow-right.svg';
 import ArrowLeftIcon from '../../../public/images/icons/arrow-left.svg';
 import CalendarIcon from '../../../public/images/icons/calendar.png';
+import ComissionsIcon from '../../../public/images/icons/comissions.svg';
+import PlannerIcon from '../../../public/images/icons/planner.svg';
+import TimerIcon from '../../../public/images/icons/timer.svg';
 
-export { GroupIcon, PartyIcon, RingIcon, ArrowRightIcon, ArrowLeftIcon, CalendarIcon };
+export { 
+    GroupIcon, 
+    PartyIcon, 
+    RingIcon, 
+    ArrowRightIcon, 
+    ArrowLeftIcon, 
+    CalendarIcon, 
+    ComissionsIcon,
+    PlannerIcon,
+    TimerIcon
+ };

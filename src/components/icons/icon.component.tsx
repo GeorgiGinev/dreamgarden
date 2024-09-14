@@ -8,7 +8,7 @@ interface IconComponentProps {
     fill?: string;
   }
   
-const IconComponent: React.FC<IconComponentProps> = ({ icon, width = 32, height = 32, fill = 'currentColor' }) => {
+const IconComponent: React.FC<IconComponentProps> = ({ icon, width = 32, height = 32, fill = 'inherit' }) => {
     const SvgIcon = MappedIcons[icon];
   
     if (!SvgIcon) {

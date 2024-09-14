@@ -11,7 +11,9 @@ export function createServicesWeddingsMock(params: Partial<ServicesWeddingsApiRe
                 primaryURL: '/images/services/weddings/image1.png',
                 sizes: [
                     createImageSizeMock({
-                        url: '/images/services/weddings/image1.png'
+                        url: '/images/services/weddings/image1.png',
+                        width: 400,
+                        height: 552
                     })
                 ]
             }),
@@ -19,7 +21,9 @@ export function createServicesWeddingsMock(params: Partial<ServicesWeddingsApiRe
                 primaryURL: '/images/services/weddings/image2.png',
                 sizes: [
                     createImageSizeMock({
-                        url: '/images/services/weddings/image2.png'
+                        url: '/images/services/weddings/image2.png',
+                        width: 400,
+                        height: 272
                     })
                 ]
             }),
@@ -27,7 +31,9 @@ export function createServicesWeddingsMock(params: Partial<ServicesWeddingsApiRe
                 primaryURL: '/images/services/weddings/image3.png',
                 sizes: [
                     createImageSizeMock({
-                        url: '/images/services/weddings/image3.png'
+                        url: '/images/services/weddings/image3.png',
+                        width: 400,
+                        height: 272
                     })
                 ]
             }),

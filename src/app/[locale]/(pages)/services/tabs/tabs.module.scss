@@ -1,3 +1,19 @@
+.tab-col {
+    @media (min-width: 992px) {
+        &:first-child {
+            border-right: 1px solid $primaryTaint;
+        }
+
+        &:last-child {
+            border-left: 1px solid $primaryTaint;
+        }
+    }
+
+    @media (max-width: 991px) {
+        margin-bottom: 16px;
+    }
+}
+
 .tab-link {
     font-size: 28px;
     font-family: "Felidae";
@@ -9,16 +25,6 @@
 
     fill: $primary;
     transition: color 100ms ease;
-
-    @media (min-width: 768px) {
-        &:first-child {
-            border-right: 1px solid $primaryTaint;
-        }
-
-        &:last-child {
-            border-left: 1px solid $primaryTaint;
-        }
-    }
 }
 
 .active-tab {
