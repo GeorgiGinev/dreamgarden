@@ -34,7 +34,7 @@
     }
 
     :global(.navbar-collapse) {
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 992px) {
             padding: 12px 0;   
             background-color: $primaryTaint;
         }

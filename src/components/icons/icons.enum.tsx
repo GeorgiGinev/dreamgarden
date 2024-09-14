@@ -5,4 +5,7 @@ export enum Icons {
     ArrowRight = 'ArrowRight',
     ArrowLeft = 'ArrowLeft',
     Calendar = 'Calendar',
+    Comissions = 'Comissions',
+    Timer = 'Timer',
+    Planner = 'Planner',
 }

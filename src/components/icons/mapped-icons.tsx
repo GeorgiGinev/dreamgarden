@@ -1,4 +1,14 @@
-import { ArrowLeftIcon, ArrowRightIcon, CalendarIcon, GroupIcon, PartyIcon, RingIcon } from "./icons-svgs";
+import { 
+    ArrowLeftIcon, 
+    ArrowRightIcon, 
+    CalendarIcon, 
+    GroupIcon, 
+    PartyIcon, 
+    RingIcon, 
+    ComissionsIcon,
+    PlannerIcon,
+    TimerIcon,
+ } from "./icons-svgs";
 import { Icons } from "./icons.enum";
 
 export const MappedIcons = {
@@ -8,4 +18,7 @@ export const MappedIcons = {
     [Icons.ArrowRight]: ArrowRightIcon,
     [Icons.ArrowLeft]: ArrowLeftIcon,
     [Icons.Calendar]: CalendarIcon,
+    [Icons.Comissions]: ComissionsIcon,
+    [Icons.Planner]: PlannerIcon,
+    [Icons.Timer]: TimerIcon,
 }

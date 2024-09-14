@@ -41,6 +41,15 @@
       "Teambuilding": "Teambuilding",
       "Parties": "Parties"
     },
+    "ServicesWeddings": {
+      "primaryImage": "Primary Image",
+      "secondaryImageOne": "Secondary Image",
+      "secondaryImageTwo": "Thirdiary Image",
+      "capacityOfPeople": "The capacity is for {capacity} people",
+      "withoutComissions": "Without comissions",
+      "withoutOvertime": "Without overtime",
+      "helpWithPlanning": "Help with planning"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Tour",
       "secondaryPageTitle": "Virtual",
