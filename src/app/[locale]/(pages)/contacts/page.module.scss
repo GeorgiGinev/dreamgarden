@@ -1,0 +1,14 @@
+.contact-form {
+    position: relative;
+    border-radius: $primaryBorderRadius;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.text-wrapper {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+    fill: $primaryTaint;
+}

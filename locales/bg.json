@@ -63,7 +63,8 @@
     },
     "Contacts": {
       "primaryPageTitle": "Контакти",
-      "secondaryPageTitle": "Нашите"
+      "secondaryPageTitle": "Нашите",
+      "followUs": "Последвайте ни:"
     },
     "LocaleSwitcher": {
       "label": "Change language",

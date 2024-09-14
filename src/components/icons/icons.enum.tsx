@@ -9,5 +9,8 @@ export enum Icons {
     Timer = 'Timer',
     Planner = 'Planner',
     Facebook = 'Facebook',
-    Instagram = 'Instagram'
+    Instagram = 'Instagram',
+    Phone = 'Phone',
+    Pin = 'Pin',
+    Mail = 'Mail'
 }

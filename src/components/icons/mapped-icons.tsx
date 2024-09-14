@@ -9,7 +9,10 @@ import {
     PlannerIcon,
     TimerIcon,
     FacebookIcon,
-    InstagramIcon
+    InstagramIcon,
+    PhoneIcon,
+    PinIcon,
+    MailIcon,
  } from "./icons-svgs";
 import { Icons } from "./icons.enum";
 
@@ -24,5 +27,8 @@ export const MappedIcons = {
     [Icons.Planner]: PlannerIcon,
     [Icons.Timer]: TimerIcon,
     [Icons.Facebook]: FacebookIcon,
-    [Icons.Instagram]: InstagramIcon
+    [Icons.Instagram]: InstagramIcon,
+    [Icons.Phone]: PhoneIcon,
+    [Icons.Pin]: PinIcon,
+    [Icons.Mail]: MailIcon
 }

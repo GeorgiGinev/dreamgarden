@@ -15,6 +15,7 @@ export function createContactsMock(params: Partial<ContactInformationApiResponse
             createSocialMediaMock({
                 name: 'Facebook'
             })
-        ]
+        ],
+        description: 'Свържете се с нас и с удоволствие ще ви разкажем за всичко, което ви интересува. Винаги сте добре дошли на място, за да пием по чаша ароматно кафе и да усетите сами магията на Приказна градина.'
     });
 }
