@@ -31,15 +31,12 @@ const Footer = async () => {
                     </Col> 
                     <Col xs={6} md={3} lg={2}>
                         <b>{translation('footerServices')}</b>
-                        <br />
                         <Link href={'/services/weddings'} className={styles['text-wrapper']}>
                             {serviceTranslation('Weddings')}
                         </Link>
-                        <br />
                         <Link href={'/services/teambuilding'} className={styles['text-wrapper']}>
                             {serviceTranslation('Teambuilding')}
                         </Link>
-                        <br />
                         <Link href={'/services/parties'} className={styles['text-wrapper']}>
                             {serviceTranslation('Parties')}
                         </Link>
@@ -48,7 +45,6 @@ const Footer = async () => {
                         <b>
                             {translation('footerContacts')}
                         </b>
-                        <br />
                         {data.phoneNumbers.map((phoneNumber: string) => {
                             return (<div>
                                 <a className={styles['text-wrapper']} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
