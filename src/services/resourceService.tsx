@@ -1,7 +1,7 @@
 import RequestParamsService from "./requestParamsService";
 
 const fetcher = async (url: string) => {
-    const res = await fetch(url, { next: { revalidate: 60 } });
+    const res = await fetch(url, { next: { revalidate: 3600 } });
     if (!res.ok) {
         throw new Error('Network response was not ok');
     }
