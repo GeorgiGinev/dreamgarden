@@ -73,6 +73,7 @@ const Page = async () => {
                         width={data.images[0].sizes[0].width}
                         height={data.images[0].sizes[0].height}
                         alt={translations('primaryImage')}
+                        sizes="(max-width: 992px) 100vw, (min-width: 992px) 75vw"
                     ></Image>
                 </Col>
             

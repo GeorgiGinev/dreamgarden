@@ -73,6 +73,7 @@ const Page = async () => {
                         width={data.images[0].sizes[0].width}
                         height={data.images[0].sizes[0].height}
                         alt={translations('primaryImage')}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     ></Image>
                 </Col>
                 <Col xs={12} xl={6} xxl={4} className="text-center">
@@ -82,6 +83,7 @@ const Page = async () => {
                         width={data.images[1].sizes[0].width}
                         height={data.images[1].sizes[0].height}
                         alt={translations('secondaryImageOne')}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     ></Image>
                     <div className="py-1"></div>
                     <Image 
@@ -90,6 +92,7 @@ const Page = async () => {
                         width={data.images[2].sizes[0].width}
                         height={data.images[2].sizes[0].height}
                         alt={translations('secondaryImageTwo')}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     ></Image>
                 </Col>
             </Row>
