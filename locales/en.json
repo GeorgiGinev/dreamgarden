@@ -42,6 +42,10 @@
       "Teambuilding": "Teambuilding",
       "Parties": "Parties"
     },
+    "AboutUs": {
+      "primaryPageTitle": "Us",
+      "secondaryPageTitle": "About"
+    },
     "ServicesWeddings": {
       "primaryImage": "Primary Image",
       "secondaryImageOne": "Secondary Image",
