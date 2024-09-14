@@ -8,6 +8,12 @@ import IconComponent from "@/components/icons/icon.component";
 import { Icons } from "@/components/icons/icons.enum";
 import styles from './page.module.scss';
 import ServicesTeambuildingService from "@/services/services/teambuilding/teambuilding.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: process.env.TITLE_PREFIX as string + ' - Teambuilding service',
+    description: 'Teambuilding service information'
+};
 
 const Page = async () => {
     const locale = await getLocale();

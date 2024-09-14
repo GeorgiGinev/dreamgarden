@@ -7,6 +7,12 @@ import RequestParamsService from "@/services/requestParamsService";
 import IconComponent from "@/components/icons/icon.component";
 import { Icons } from "@/components/icons/icons.enum";
 import styles from './page.module.scss';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: process.env.TITLE_PREFIX as string + ' - Wedding service',
+    description: 'Wedding service information'
+};
 
 const Page = async () => {
     const locale = await getLocale();

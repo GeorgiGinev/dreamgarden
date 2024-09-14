@@ -9,6 +9,12 @@ import HomeService from "@/services/home/home.service";
 import { getLocale, getTranslations } from "next-intl/server";
 import RequestParamsService from "@/services/requestParamsService";
 import AOSComponent from "@/components/aos/aos.component";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: process.env.TITLE_PREFIX as string + ' - Home',
+  description: 'Home information',
+};
 
 export default async function Home() {
   const locale = await getLocale();

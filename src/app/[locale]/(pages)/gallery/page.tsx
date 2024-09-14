@@ -1,8 +1,12 @@
 import { Container} from "react-bootstrap";
 import Title from "./title";
 import GalleryProvider from "./gallery.provider";
-import { Suspense } from "react";
-import Loading from "./loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: process.env.TITLE_PREFIX as string + ' - Gallery',
+    description: 'Gallery'
+};
 
 const Page = () => {
     return (
