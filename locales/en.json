@@ -44,7 +44,10 @@
     },
     "AboutUs": {
       "primaryPageTitle": "Us",
-      "secondaryPageTitle": "About"
+      "secondaryPageTitle": "About",
+      "garden": "Garden",
+      "happyClients": "Happy clients",
+      "partners": "Partners"
     },
     "ServicesWeddings": {
       "primaryImage": "Primary Image",

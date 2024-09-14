@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Title from "./title";
+import Page from "./garden/page";
 
 export const metadata: Metadata = {
     title: process.env.TITLE_PREFIX as string + ' - AboutUs',
@@ -7,11 +7,8 @@ export const metadata: Metadata = {
 };
 
 
-const Page = () => {
-    return (<section>
-        <Title></Title>
-        about us
-    </section>)
+const SPage = () => {
+    return (<Page></Page>)
 }
 
-export default Page;
+export default SPage;
