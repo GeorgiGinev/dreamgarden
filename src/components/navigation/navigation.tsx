@@ -4,17 +4,16 @@ import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import Logo from "../logo/logo";
 import { NavigationItemInterface } from "./navigation-item.interface";
 import { NavigationItemType } from "@/enums/navigation-item.enum";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import styles from "./navigation.module.scss"
 import { useTranslations } from "next-intl";
 import Button from "../button/button";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
-import Link from "next/link";
 import LocaleSwitcher from "../localSwitcher/locale-switcher";
+import { Link } from "@/routing";
 
 const Navigation = () => {
-    const router = useRouter();
     const pathName = usePathname();
     const [isOpen, setOpen] = useState(false)
     const t = useTranslations("Header");
@@ -24,29 +23,27 @@ const Navigation = () => {
         {
             name: t("virtualTour"),
             type: NavigationItemType.Button,
-            url: 'virtualTour',
+            url: '/virtualTour',
         },
         {
             name: t("gallery"),
             type: NavigationItemType.Button,
-            url: 'gallery'
+            url: '/gallery'
         },
         {
             name: t("services"),
             type: NavigationItemType.Button,
-            url: 'services'
+            url: '/services'
         },
         {
             name: t("aboutUs"),
             type: NavigationItemType.Button,
-            action: () => {
-                router.push('/home')
-            },
+            url: '/aboutUs'
         },
         {
             name: t("contacts"),
             type: NavigationItemType.Button,
-            url: 'contacts'
+            url: '/contacts'
         },
     ]
 
@@ -86,7 +83,7 @@ const Navigation = () => {
                                 )
                             }
                         })}
-                        <Link className="nav-link" href="askUs">
+                        <Link className="nav-link" href="/askUs">
                             <Button>
                                 {translationsHome('askUs')}
                             </Button>

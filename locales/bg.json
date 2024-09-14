@@ -32,7 +32,10 @@
     },
     "Services": {
       "primaryPageTitle": "Услуги",
-      "secondaryPageTitle": "Нашите"
+      "secondaryPageTitle": "Нашите",
+      "Weddings": "Сватби",
+      "Teambuilding": "Тиймбилдинг",
+      "Parties": "Партита"
     },
     "VirtualTour": {
       "primaryPageTitle": "Тур",

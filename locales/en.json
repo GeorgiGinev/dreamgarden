@@ -36,7 +36,10 @@
     },
     "Services": {
       "primaryPageTitle": "Services",
-      "secondaryPageTitle": "Our"
+      "secondaryPageTitle": "Our",
+      "Weddings": "Weddings",
+      "Teambuilding": "Teambuilding",
+      "Parties": "Parties"
     },
     "VirtualTour": {
       "primaryPageTitle": "Tour",
