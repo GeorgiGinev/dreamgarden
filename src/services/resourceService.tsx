@@ -2,7 +2,7 @@ import RequestParamsService from "./requestParamsService";
 import useSWRInfinite from "swr/infinite";
 
 const fetcher = async (url: string) => {
-    const res = await fetch(url);
+    const res = await fetch(url, { next: { revalidate: 60 } });
     if (!res.ok) {
         throw new Error('Network response was not ok');
     }
