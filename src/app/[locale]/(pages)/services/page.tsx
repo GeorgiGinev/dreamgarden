@@ -1,14 +1,7 @@
-import { Container, Tab, Tabs } from "react-bootstrap";
-import Title from "./title";
-import ServicesTabs from "./tabs/tab";
+import Page from "./weddings/page"
 
-const Page = () => {
-    return (
-    <Container>
-        <Title></Title>
-        <ServicesTabs></ServicesTabs>
-    </Container>
-    );
+const SPage = () => {
+    return (<Page></Page>);
 }
 
-export default Page;
+export default SPage;

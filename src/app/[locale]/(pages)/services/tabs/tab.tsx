@@ -1,47 +1,36 @@
-"use client"
-
-import { Container, Image, Nav, Tab, Tabs } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import styles from "./tabs.module.scss";
 import { Icons } from "@/components/icons/icons.enum";
 import IconComponent from "@/components/icons/icon.component";
+import { useTranslations } from "next-intl";
+import { Link } from "@/routing";
+import { TabInterface } from "./tab.interface";
 
-const ServicesTabs = () => {
+const ServicesTabs = (params: TabInterface) => {
   const iconsEnum = Icons;
+  const translations = useTranslations('Services');
 
     return (
-      <Tab.Container id="left-tabs-example" defaultActiveKey="weddings">
-        <Nav variant="pills" className={styles.container + ' mb-4'} fill>
-            <Nav.Item>
-              <Nav.Link eventKey="weddings">
+      <Nav className={styles.container + ' mb-4'} fill>
+            <Link href="/services/weddings" className={styles['tab-link'] + ' ' + ('/services/'+params.activeTab === '/services/weddings' ? styles['active-tab']: '')}>
                 <span className="pe-2">
                   <IconComponent icon={iconsEnum.Ring} width={50} height={45}></IconComponent>
                 </span>
-                Сватби
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="teambuilding">
+                {translations('Weddings')}
+            </Link>
+            <Link href="/services/teambuilding" className={styles['tab-link'] + ' ' + ('/services/'+params.activeTab === '/services/teambuilding' ? styles['active-tab']: '')}>
                 <span className="pe-2">
                   <IconComponent icon={iconsEnum.Group} width={43} height={35}></IconComponent>
                 </span>
-                Тиймбилдинг
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="parties">
+                {translations('Teambuilding')}
+            </Link>
+            <Link href="/services/parties" className={styles['tab-link'] + ' ' + ('/services/'+params.activeTab === '/services/parties' ? styles['active-tab']: '')}>
                 <span className="pe-2">
                   <IconComponent icon={iconsEnum.Party} width={43} height={35}></IconComponent>
                 </span>
-                Партита
-              </Nav.Link>
-            </Nav.Item>
+                {translations('Parties')}
+            </Link>
           </Nav>
-          <Tab.Content>
-            <Tab.Pane eventKey="weddings">First tab content</Tab.Pane>
-            <Tab.Pane eventKey="teambuilding">Second tab content</Tab.Pane>
-            <Tab.Pane eventKey="parties">Third tab content</Tab.Pane>
-          </Tab.Content>
-    </Tab.Container>
     );
 }
 

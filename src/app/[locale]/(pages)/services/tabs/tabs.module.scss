@@ -1,26 +1,16 @@
-.container {    
-    :global(.nav-item) {
-        font-size: 28px;
-        font-family: "Felidae";
+.tab-link {
+    font-size: 28px;
+    font-family: "Felidae";
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    text-decoration: none;
 
-        :global(.nav-link) {
-            //color: black;
-        }
+    fill: $primary;
+    transition: color 100ms ease;
 
-        :global(svg) {
-            fill: $primary;
-            transition: fill 100ms ease;
-        }
-
-        :global(.active) {
-            color: black;
-            background-color: transparent;
-
-            :global(svg) {
-                fill: $primaryTaint;
-            }
-        }
-
+    @media (min-width: 768px) {
         &:first-child {
             border-right: 1px solid $primaryTaint;
         }
@@ -28,5 +18,14 @@
         &:last-child {
             border-left: 1px solid $primaryTaint;
         }
+    }
+}
+
+.active-tab {
+    color: black;
+    background-color: transparent;
+
+    :global(svg) {
+        fill: $primaryTaint;
     }
 }
