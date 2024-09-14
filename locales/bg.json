@@ -24,7 +24,8 @@
       "locationBoxConvenient": "Удобна",
       "locationBoxLocation": "Локация",
       "locationHomeAddressTitle": "Точен адрес",
-      "locationHomeContactTitle": "Контакти"
+      "locationHomeContactTitle": "Контакти",
+      "welcome": "Добре дошли"
     },
     "Gallery": {
       "primaryPageTitle": "Галерия",
@@ -80,6 +81,7 @@
       "footerServicesTwo": "Тиймбилдинг",
       "footerServicesThree": "Партита",
       "footerContacts": "Контакти",
-      "footerFollowUs": "Последвайте ни"
+      "footerFollowUs": "Последвайте ни",
+      "footerGoogleMapsLocation": "Локация Google"
     }
   }

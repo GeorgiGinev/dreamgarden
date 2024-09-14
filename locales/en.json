@@ -28,7 +28,8 @@
       "locationBoxConvenient": "Convenient",
       "locationBoxLocation": "Location",
       "locationHomeAddressTitle": "Specific Address",
-      "locationHomeContactTitle": "Contacts"
+      "locationHomeContactTitle": "Contacts",
+      "welcome": "Welcome"
     },
     "Gallery": {
       "primaryPageTitle": "Gallery",
@@ -80,6 +81,7 @@
       "footerServicesTwo": "Teambuilding",
       "footerServicesThree": "Parties",
       "footerContacts": "Contacts",
-      "footerFollowUs": "Follow us on"
+      "footerFollowUs": "Follow us on",
+      "footerGoogleMapsLocation": "Google location"
     }
   }

@@ -8,6 +8,8 @@ import {
     ComissionsIcon,
     PlannerIcon,
     TimerIcon,
+    FacebookIcon,
+    InstagramIcon
  } from "./icons-svgs";
 import { Icons } from "./icons.enum";
 
@@ -21,4 +23,6 @@ export const MappedIcons = {
     [Icons.Comissions]: ComissionsIcon,
     [Icons.Planner]: PlannerIcon,
     [Icons.Timer]: TimerIcon,
+    [Icons.Facebook]: FacebookIcon,
+    [Icons.Instagram]: InstagramIcon
 }

@@ -7,6 +7,8 @@ import CalendarIcon from '../../../public/images/icons/calendar.png';
 import ComissionsIcon from '../../../public/images/icons/comissions.svg';
 import PlannerIcon from '../../../public/images/icons/planner.svg';
 import TimerIcon from '../../../public/images/icons/timer.svg';
+import FacebookIcon from '../../../public/images/icons/facebook.svg';
+import InstagramIcon from '../../../public/images/icons/instagram.svg';
 
 export { 
     GroupIcon, 
@@ -17,5 +19,7 @@ export {
     CalendarIcon, 
     ComissionsIcon,
     PlannerIcon,
-    TimerIcon
+    TimerIcon,
+    FacebookIcon,
+    InstagramIcon
  };

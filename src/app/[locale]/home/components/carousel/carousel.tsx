@@ -1,55 +1,33 @@
-"use client"
+"use server"
 
 import { Carousel, CarouselItem } from "react-bootstrap";
 import styles from "./carousel.module.scss"
 import Button from "@/components/button/button";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
-import AOS from 'aos';
-import { AnimationsDurationEnum } from "@/enums/animations-duration.enum";
-import { HomeCarouselImageInterface } from "./carousel.interface";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { Link } from "@/routing";
+import { CarouselComponentInterface } from "./carousel.component.interface";
 
-const HomeCarouselComponent = () => {
-    const router = useRouter();
+const HomeCarouselComponent = (data: CarouselComponentInterface) => {
     const t = useTranslations('Home')
-
-    const imageList: HomeCarouselImageInterface[] = [
-        {
-            url: '/images/slider/slider1.png',
-            name: 'Welcome'
-        }
-    ]
-
-    useEffect(() => {
-        const newLocal = AnimationsDurationEnum.Primary;
-        AOS.init({
-          duration: newLocal,
-          once: true,
-        });
-
-        return () => {
-            AOS.refresh();
-        };
-      }, [])
       
     return(
         <section className={styles.container}>
             <div className="carousel-wrapper">
                 <div className="carousel-shade"></div>
-                <Carousel data-aos="fade-in" controls={imageList.length > 1}>
-                    {imageList.map((imageObj: HomeCarouselImageInterface, index: number) => {
+                <Carousel data-aos="fade-in" controls={data.images.length > 1}>
+                    {data.images.map((imageObj: string, index: number) => {
                         return (
                             <CarouselItem style={{
                                 height: 100+'vh',
                                 opacity: 0.65
                             }} key={index}>
                                 <Image 
-                                    src={imageObj.url} 
-                                    alt={imageObj.name} 
+                                    src={imageObj} 
+                                    alt={t('welcome')} 
                                     priority 
                                     fill 
+                                    sizes="100vw"
                                     style={{
                                         objectFit: 'cover',
                                     }}
@@ -59,11 +37,11 @@ const HomeCarouselComponent = () => {
                     })}
                 </Carousel>
                 <div className="ask-us-wrapper">
-                    <Button onClick={() => {
-                        router.push('askUs')
-                    }}>
+                    <Link href={'/askUs'}>
+                    <Button>
                         {t('askUs')}
                     </Button>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -8,4 +8,6 @@ export enum Icons {
     Comissions = 'Comissions',
     Timer = 'Timer',
     Planner = 'Planner',
+    Facebook = 'Facebook',
+    Instagram = 'Instagram'
 }
