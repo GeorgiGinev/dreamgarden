@@ -2,17 +2,25 @@ import styles from "./page.module.scss";
 import HomeCarouselComponent from "./components/carousel/carousel";
 import { Col, Container, Row } from "react-bootstrap";
 import SectionTitle from "@/components/section-title/section-title";
-import { useTranslations } from "next-intl";
 import HomeServicesGrid from "./components/services-grid/services-grid";
 import HomeKeyFacts from "./components/key-facts-grid/key-facts-grid";
 import HomeLocation from "./components/location/location";
+import HomeService from "@/services/home/home.service";
+import { getLocale, getTranslations } from "next-intl/server";
+import RequestParamsService from "@/services/requestParamsService";
+import AOSComponent from "@/components/aos/aos.component";
 
-export default function Home() {
-  const homeTranslations = useTranslations('Home');
+export default async function Home() {
+  const locale = await getLocale();
+  const homeService = new HomeService();
+  const data = await homeService.getHome(new RequestParamsService({locale: locale}));
+
+  const homeTranslations = await getTranslations('Home');
 
   return (
     <main className={styles.container}>
-      <HomeCarouselComponent></HomeCarouselComponent>
+      <AOSComponent></AOSComponent>
+      <HomeCarouselComponent images={data.videos}></HomeCarouselComponent>
       <section className="container-wrapper"
         style={{
           backgroundImage: 'url("/images/our_services.png")'
@@ -22,13 +30,11 @@ export default function Home() {
           <Row>
             <Col md={6}>
               <SectionTitle primrayTitle={homeTranslations('servicesBoxServices')} secondaryTitle={homeTranslations('servicesBoxOur')}></SectionTitle>
-              <p className="mt-4">
-                {homeTranslations('servicesBoxDescription')}
-              </p>
+              <p className="mt-4" dangerouslySetInnerHTML={{ __html: data.servicesDescription }} />
             </Col>
             <Col md={6}></Col>
           </Row>
-          <HomeServicesGrid></HomeServicesGrid>
+          <HomeServicesGrid services={data.services}></HomeServicesGrid>
         </Container>
       </section>
       <section className="container-wrapper"
@@ -43,7 +49,7 @@ export default function Home() {
             </Col>
             <Col md={6}></Col>
           </Row>
-          <HomeKeyFacts></HomeKeyFacts>
+          <HomeKeyFacts images={data.keyFacts}></HomeKeyFacts>
         </Container>
       </section>
       <section>
@@ -55,7 +61,7 @@ export default function Home() {
             </Col>
             <Col md={5}></Col>
           </Row>
-          <HomeLocation></HomeLocation>
+          <HomeLocation contacts={data.contacts}></HomeLocation>
         </Container>
       </section>
     </main>

@@ -1,23 +1,18 @@
-"use client"
-
-import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Container, Nav, NavDropdown, NavLink, Navbar, NavbarCollapse, NavbarToggle } from "react-bootstrap";
 import Logo from "../logo/logo";
 import { NavigationItemInterface } from "./navigation-item.interface";
 import { NavigationItemType } from "@/enums/navigation-item.enum";
-import { usePathname } from "next/navigation";
 import styles from "./navigation.module.scss"
-import { useTranslations } from "next-intl";
 import Button from "../button/button";
-import Hamburger from "hamburger-react";
-import { useState } from "react";
 import LocaleSwitcher from "../localSwitcher/locale-switcher";
 import { Link } from "@/routing";
+import MobileHamburgerComponent from "./mobile-hamburger.component";
+import { getTranslations } from "next-intl/server";
+import NavigationItemComponent from "./navigation-item/navigation-item.component";
 
-const Navigation = () => {
-    const pathName = usePathname();
-    const [isOpen, setOpen] = useState(false)
-    const t = useTranslations("Header");
-    const translationsHome = useTranslations("Home");
+const Navigation = async () => {
+    const t = await getTranslations("Header");
+    const translationsHome = await getTranslations("Home");
 
     const items: NavigationItemInterface[] = [
         {
@@ -50,20 +45,18 @@ const Navigation = () => {
     return(
         <Navbar expand="lg" className={styles.container + ' bg-body-transparent'}>
             <Container>
-                <Navbar.Brand onClick={(event: any) => { event.preventDefault() }}>
+                <div className="py-1">
                     <Logo position={'header'}></Logo>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav">
-                    <Hamburger color="white" toggled={isOpen} toggle={setOpen} aria-controls="basic-navbar-nav" />
-                </Navbar.Toggle>
-                <Navbar.Collapse id="basic-navbar-nav">
+                </div>
+                <NavbarToggle aria-controls="basic-navbar-nav">
+                    <MobileHamburgerComponent></MobileHamburgerComponent>
+                </NavbarToggle>
+                <NavbarCollapse id="basic-navbar-nav">
                      <Nav className="ms-auto">
                         {items.map((item, index) => {
                             if(!item.children || item.children.length === 0) {
                                 return (
-                                    <Link className={`nav-link${pathName.includes(item.url as string) ? ' active-item' : ''}`} key={index} onClick={item.action} href={item.url ?? ''}>
-                                        {item.name}
-                                    </Link>
+                                    <NavigationItemComponent item={item}></NavigationItemComponent>
                                 )
                             } else if(!!item.children && item.children.length > 0) {
                                 return (
@@ -88,11 +81,11 @@ const Navigation = () => {
                                 {translationsHome('askUs')}
                             </Button>
                         </Link>
-                        <Nav.Link>
+                        <NavLink>
                             <LocaleSwitcher />
-                        </Nav.Link>
+                        </NavLink>
                     </Nav>
-                </Navbar.Collapse>
+                </NavbarCollapse>
             </Container>
         </Navbar>
     )

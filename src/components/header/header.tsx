@@ -1,5 +1,3 @@
-"use client"
-
 import Navigation from "../navigation/navigation";
 
 const Header = () => {

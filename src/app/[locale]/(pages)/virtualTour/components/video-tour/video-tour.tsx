@@ -4,8 +4,9 @@ import Button from "@/components/button/button";
 import { useTranslations } from "next-intl";
 import styles from "./video-tour.module.scss";
 import { useRef, useState } from "react";
+import { VideoTourInterface } from "./video-tour.interface";
 
-const VideoTour = () => {
+const VideoTour = (params: VideoTourInterface) => {
     const videoRef = useRef(null);
     const [startVideo, setStartVideo] = useState(false);
     const translationsVirtualTour = useTranslations('VirtualTour');
@@ -36,7 +37,7 @@ const VideoTour = () => {
                 setStartVideo(false);
                 stopVideo();
             }}>
-                <source src="/videos/virtual-tour/virtual-tour.mp4" type="video/mp4" />
+                <source src={params.video} type="video/mp4" />
             </video>
         </div>
     );

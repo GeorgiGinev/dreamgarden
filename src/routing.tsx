@@ -10,6 +10,7 @@ export const routing = defineRouting({
   // paths are rewritten to the shared, internal ones.
   pathnames: {
     '': '',
+    '/home': '/home',
     '/askUs': '/askUs',
     '/contacts': '/contacts',
     '/aboutUs': '/aboutUs',

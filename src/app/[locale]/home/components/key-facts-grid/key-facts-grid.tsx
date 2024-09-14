@@ -1,73 +1,25 @@
-"use client"
+"use server"
 
-import { AnimationsDurationEnum } from "@/enums/animations-duration.enum";
-import Image from "next/image";
-import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import AOS from 'aos';
-import { useFullScreenImageGalleryContext } from "@/components/fullscreen-image-gallery/fullscreen-image-gallery.context";
 import Button from "@/components/button/button";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ImageInterface } from "@/interfaces/image/image.interface";
+import FullscreenImageComponent from "@/components/fullscreen-image-gallery/fullscreen-image-component/fullscreen-image.component";
+import { Link } from "@/routing";
+import { KeyFactsGridInterface } from "./key-facts-grid.interface";
+import { HomeKeyFactsApiResponseInterface } from "@/interfaces/api/home-key-facts-api-response.interface";
 
-const HomeKeyFacts = () => {
-    const { setImage, setImagesList } = useFullScreenImageGalleryContext();
-    const router = useRouter();
-    const t = useTranslations('Home')
-
-    const images: ImageInterface[] = [
-        {
-            id: '0',
-            name: "Bride",
-            primaryURL: "/images/home-facts/secondary.jpg",
-            sizes: [{
-                width: 500,
-                height: 500,
-                url: "/images/home-facts/secondary.jpg"
-            }]
-        },
-        {
-            id: '1',
-            name: "Wedding",
-            primaryURL: "/images/home-facts/primary.jpg",
-            sizes: [{
-                width: 500,
-                height: 500,
-                url: "/images/home-facts/primary.jpg"
-            }]
-        },
-        {
-            id: '2',
-            name: "Bride",
-            primaryURL: "/images/home-facts/secondary.jpg",
-            sizes: [{
-                width: 500,
-                height: 500,
-                url: "/images/home-facts/secondary.jpg"
-            }]
-        }
-    ];
-
-    useEffect(() => {
-        const newLocal = AnimationsDurationEnum.Secondary;
-        AOS.init({
-          duration: newLocal,
-          once: false,
-        });
-
-        return () => {
-            AOS.refresh();
-        };
-      }, [])
+const HomeKeyFacts = (params: KeyFactsGridInterface) => {
+    const t = useTranslations('Home');
+    const imagesList: ImageInterface[] = params.images.map((image: HomeKeyFactsApiResponseInterface) => image.image);
       
     return (
         <section>
             <Row className="mt-4">
-                {images.map((image: ImageInterface, index: number) => {
-                    const isMiddle = index !== 0 && index < images.length-1;
+                {params.images.map((image: HomeKeyFactsApiResponseInterface, index: number) => {
+                    const isMiddle = index !== 0 && index < params.images.length-1;
                     const isFirst = index === 0;
-                    const isLast = index === images.length - 1;
+                    const isLast = index === params.images.length - 1;
 
                     const alignItemsTo = isLast ? 'flex-start' : 'flex-end';
                     const fadeEffect: () => string = (): string => {
@@ -91,20 +43,7 @@ const HomeKeyFacts = () => {
                                     position: 'relative'
                                 }}
                                 >
-                                    <Image 
-                                        src={image.sizes[0].url} 
-                                        alt={image.name}
-                                        fill
-                                        style={{
-                                            objectFit: 'cover',
-                                            objectPosition: 'center center',
-                                            cursor: 'pointer'
-                                        }}
-                                        onClick={() => {
-                                            setImage(image);
-                                            setImagesList(images);
-                                        }}
-                                    ></Image>
+                                    <FullscreenImageComponent image={image.image} images={imagesList}></FullscreenImageComponent>
                                 </div>
                             </div>
                         </Col>
@@ -112,11 +51,11 @@ const HomeKeyFacts = () => {
                 })}
             </Row>
             <div className="text-center mt-4">
-                <Button onClick={() => {
-                    router.push('askUs')
-                }}>
-                    {t('askUs')}
-                </Button>
+                <Link href={'/askUs'}>
+                    <Button>
+                        {t('askUs')}
+                    </Button>
+                </Link>
             </div>
         </section>
     )

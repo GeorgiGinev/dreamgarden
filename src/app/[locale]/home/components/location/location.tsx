@@ -1,18 +1,13 @@
-"use client"
-
 import { useTranslations } from "next-intl";
 import { Col, Row } from "react-bootstrap";
 import styles from "./location.module.scss";
-import { MapProvider } from "./location.provider";
-import { GoogleMap } from "@react-google-maps/api";
+import { LocationInterface } from "./location.interface";
+import GoogleMapComponent from "./google-map/google-map.component";
 
-const HomeLocation = () => {
+const HomeLocation = (params: LocationInterface) => {
     const homeTranslation = useTranslations('Home');
-
-    const defaultMapContainerStyle = {
-        width: "100%",
-        height: "316px",
-    };
+    const lat = params.contacts.googleLocation.lat;
+    const long = params.contacts.googleLocation.long;
 
     return (
         <Row className="mt-4">
@@ -21,25 +16,21 @@ const HomeLocation = () => {
                     <div className="mb-3">
                         <h5 className="mb-3">{homeTranslation('locationHomeAddressTitle')}</h5>
                         <p>
-                            bul. `Vitosha` 23, 2100 Elin Pelin
+                            {params.contacts.specificAddress}
                         </p>
                     </div>
                     <div className="mb-3">
                         <h5 className="mb-3">{homeTranslation('locationHomeContactTitle')}</h5>
                         <p>
-                            0876929962<br />
-                            ivan@gmail.com
+                            {params.contacts.phoneNumbers[0]}
+                            <br />
+                            {params.contacts.email}
                         </p>
                     </div>
                 </div>
             </Col>
             <Col xs={12} lg={8}>
-                <MapProvider>
-                    <div className="w-full">
-                        <GoogleMap mapContainerStyle={defaultMapContainerStyle}>
-                        </GoogleMap>
-                    </div>
-                </MapProvider>
+                <GoogleMapComponent lat={lat} long={long}></GoogleMapComponent>
             </Col>
         </Row>
     );
