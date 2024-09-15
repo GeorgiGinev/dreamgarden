@@ -54,6 +54,11 @@
       "withoutOvertime": "Без овъртайм",
       "helpWithPlanning": "Помощ при планиране"
     },
+    "AboutUsGarden": {
+      "primaryImage": "Главна снимка",
+      "secondaryImageOne": "Второстепенна снимка - едно",
+      "secondaryImageTwo": "Второстепенна снимка - две"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Тур",
       "secondaryPageTitle": "Виртуален",
