@@ -36,7 +36,10 @@ const Page = async () => {
                     backgroundRepeat: 'no-repeat',
                     zIndex: '-1'
                 }}></div>
-            <Container className="py-4">
+            <Container className="pb-4" style={{
+                paddingTop: 72,
+                paddingBottom: 72
+            }}>
             <Row className="mb-4">
                 <Col md={5}></Col>
                 <Col md={2}>

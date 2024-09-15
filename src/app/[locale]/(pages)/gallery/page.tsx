@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 
 const Page = () => {
     return (
-        <Container>
+        <Container style={{
+            paddingTop: 72,
+            paddingBottom: 72
+        }}>
             <Title></Title>
             <GalleryProvider></GalleryProvider>
         </Container>
