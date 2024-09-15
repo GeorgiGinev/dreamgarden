@@ -64,9 +64,9 @@ const Page = async () => {
                                 </p>
                             </Col>
                             <Col xs={12} md={6}>
-                                {data.phoneNumbers.map((phoneNumber: string) => {
+                                {data.phoneNumbers.map((phoneNumber: string, index: number) => {
                                     return (
-                                        <p className={"d-flex align-items-center " + styles['text-wrapper']}>
+                                        <p className={"d-flex align-items-center " + styles['text-wrapper']} key={index}>
                                             <IconComponent fill="inherit" icon={Icons.Phone} width={22} height={23}></IconComponent>
                                             <a className={styles['text-wrapper'] + ' ps-1'} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                                         </p>
