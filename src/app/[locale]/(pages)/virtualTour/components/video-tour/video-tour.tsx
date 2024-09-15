@@ -24,7 +24,7 @@ const VideoTour = (params: VideoTourInterface) => {
     }
 
     return (
-        <div className="position-relative my-4">
+        <div className="position-relative mb-4">
             {!startVideo && <div className={styles['play-video-container']}>
                 <Button onClick={() => {
                     setStartVideo(true);

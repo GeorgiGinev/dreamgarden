@@ -18,10 +18,13 @@ const Page = async () => {
     const data = await videoTourService.getVideoTour(new RequestParamsService({locale: locale}));
 
     return (
-        <Container>
+        <Container style={{
+            paddingTop: 72,
+            paddingBottom: 72
+        }}>
             <Title></Title>
             <VideoTour video={data.video} />
-            <div className="py-4">
+            <div className="pb-4">
                 <Row className="align-items-end">
                     <Col lg={2}></Col>
                     <Col lg={6}>

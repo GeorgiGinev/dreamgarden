@@ -1,5 +1,3 @@
-"use client"
-
 import { CardBody, CardTitle} from "react-bootstrap";
 import { Card as CardBootstrap } from "react-bootstrap";
 import styles from "./card.module.scss"

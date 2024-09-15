@@ -59,6 +59,9 @@
       "secondaryImageOne": "Второстепенна снимка - едно",
       "secondaryImageTwo": "Второстепенна снимка - две"
     },
+    "AboutUsHappyClients": {
+      "primaryImage": "Главна снимка"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Тур",
       "secondaryPageTitle": "Виртуален",

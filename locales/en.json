@@ -63,6 +63,9 @@
       "secondaryImageOne": "Secondary Image - One",
       "secondaryImageTwo": "Secondary Image - Two"
     },
+    "AboutUsHappyClients": {
+      "primaryImage": "Primary Image"
+    },
     "VirtualTour": {
       "primaryPageTitle": "Tour",
       "secondaryPageTitle": "Virtual",
