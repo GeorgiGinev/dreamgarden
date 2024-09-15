@@ -11,7 +11,9 @@ const ServicesTabs = (params: TabInterface) => {
   const translations = useTranslations('AboutUs');
 
     return (
-      <Nav className={'mb-5'} fill>
+      <Nav style={{
+        marginBottom: '96px'
+      }} fill>
         <Row style={{
           width: '100%'
         }}>
