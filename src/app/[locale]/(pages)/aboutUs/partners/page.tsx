@@ -22,9 +22,9 @@ const Page = async () => {
     return(<div>
         <ServicesTabs activeTab="partners"></ServicesTabs>
         <Row>
-           {data.partners.map((partner: PartnersInterface) => {
+           {data.partners.map((partner: PartnersInterface, index: number) => {
                 return (
-                    <Col xs={12} mb={6} lg={4} xl={3}>
+                    <Col xs={12} mb={6} lg={4} xl={3} key={index}>
                         <Card className={styles['card-wrapper'] + ' p-4'}>
                             <CardBody>
                                 <div className="w-100 text-center mb-5">
