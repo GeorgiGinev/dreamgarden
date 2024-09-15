@@ -25,7 +25,7 @@ const Page = async () => {
                 <Col xs={12} xl={12} xxl={4}>
                     <QuotesFromClientsComponent quotes={data.happyClients}></QuotesFromClientsComponent>
                 </Col>
-                <Col xs={12} xl={8} className="text-center">
+                <Col xs={12} xxl={8} className="text-center">
                     {!!data.image ? <Image 
                         style={{
                             height: '100%'
