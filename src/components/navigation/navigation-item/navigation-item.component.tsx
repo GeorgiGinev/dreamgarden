@@ -9,7 +9,7 @@ const NavigationItemComponent = (data: NavigationItemComponentInterface) => {
     const item = data.item;
 
     return(
-        <Link className={`nav-link ${pathName?.includes(item.url as string) ? 'active-item' : ''}`} onClick={item.action} href={item.url ?? ''}>
+        <Link className={`nav-link ${pathName?.includes(item.url as string) ? 'active-item' : ''}`} onClick={item.action} href={(item.url as any) ?? ''}>
             {item.name}
         </Link>
     )
