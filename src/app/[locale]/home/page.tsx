@@ -30,7 +30,7 @@ export default async function Home() {
       <HomeCarouselComponent images={data.videos}></HomeCarouselComponent>
       <section className="container-wrapper"
         style={{
-          backgroundImage: 'url("/images/our_services.svg")'
+          backgroundImage: 'url("/images/our_services.webp")'
         }}
       >
         <Container className="py-4">

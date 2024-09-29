@@ -12,7 +12,7 @@ const Title = () => {
         setPrimaryTitle(translation('primaryPageTitle'));
         setSecondaryTitle(translation('secondaryPageTitle'));
         setIsContactFormVisible(false);
-        setPageImage('/images/contact-page-image-title.png');
+        setPageImage('/images/contact-page-image-title.webp');
     });
 
     return(<></>);

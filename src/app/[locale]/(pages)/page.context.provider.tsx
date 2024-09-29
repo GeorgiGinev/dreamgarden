@@ -15,7 +15,7 @@ interface PageContextProviderInterface {
 const PageContextProvider = ({children}: PageContextProviderInterface) => {
     const [primaryTitle, setPrimaryTitle] = useState('');
     const [secondaryTitle, setSecondaryTitle] = useState('');
-    const [pageImage, setPageImage] = useState('/images/page_header.png');
+    const [pageImage, setPageImage] = useState('/images/page_header.webp');
     const [isContactFormVisible, setIsContactFormVisible] = useState<boolean>(false);
 
     return(
