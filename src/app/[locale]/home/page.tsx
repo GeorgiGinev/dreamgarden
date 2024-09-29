@@ -10,7 +10,6 @@ import { getLocale, getTranslations } from "next-intl/server";
 import RequestParamsService from "@/services/requestParamsService";
 import AOSComponent from "@/components/aos/aos.component";
 import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: process.env.TITLE_PREFIX as string + ' - Home',
@@ -28,19 +27,11 @@ export default async function Home() {
     <main className={styles.container}>
       <AOSComponent></AOSComponent>
       <HomeCarouselComponent images={data.videos}></HomeCarouselComponent>
-      <section className="position-relative">
-        <div style={{
-          width: "100%",
-          height: "32vw",
-          position: "absolute",
-          top: 0,
-          left: 0
-        }}>
-          <Image style={{
-            top: 0
-          }} sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw" src="/images/our_services.svg" alt="services" fill={true}></Image>
-        </div>
-        <div className="container-wrapper position-relative">
+      <section className="container-wrapper"
+        style={{
+          backgroundImage: 'url("/images/our_services.png")'
+        }}
+      >
         <Container className="py-4">
           <Row>
             <Col md={6}>
@@ -51,7 +42,6 @@ export default async function Home() {
           </Row>
           <HomeServicesGrid services={data.services}></HomeServicesGrid>
         </Container>
-      </div>
       </section>
       <section className="container-wrapper"
         style={{
