@@ -4,6 +4,7 @@
     align-items: center;
     border-radius: 4px;
     position: relative;
+    font-size: 20px;
 
     :global(select::-ms-expand) {
         display: none;
