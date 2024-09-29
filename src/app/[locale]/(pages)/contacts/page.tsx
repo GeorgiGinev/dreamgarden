@@ -26,7 +26,7 @@ const Page = async () => {
         <div className={'position-relative overflow-hidden'}>
             <Title />
             <div style={{
-                    backgroundImage: 'url(/images/contact_form_flower_2.png)',
+                    backgroundImage: 'url(/images/contact_form_flower_2.webp)',
                     width: 540,
                     height: 315,
                     position: 'absolute',
@@ -100,7 +100,7 @@ const Page = async () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundImage: 'url(/images/contact_form_doodle.png)',
+                        backgroundImage: 'url(/images/contact_form_doodle.webp)',
                         width: 200,
                         height: 200,
                         position: 'absolute',

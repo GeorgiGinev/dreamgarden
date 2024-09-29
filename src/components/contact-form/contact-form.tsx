@@ -4,12 +4,9 @@ import { Col, Container, Form, FormControl, FormGroup, FormLabel, Row, Toast, To
 import SectionTitle from "../section-title/section-title";
 import { useTranslations } from "next-intl";
 import styles from "./contact-form.module.scss";
-import Image from "next/image";
-import { Icons } from "@/enums/icons-enum";
 import Button from "../button/button";
 import { submitContactForm } from "./contact-form-submit";
 import { useRef, useState } from "react";
-import { createForm } from "@/services/formService";
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type Inputs = {
