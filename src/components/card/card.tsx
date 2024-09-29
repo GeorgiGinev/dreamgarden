@@ -33,7 +33,7 @@ const Card = (params: CardParamsInterface) => {
                                     ></Image>
                                 </div>
                             : null}
-                            {!!params.title ? <h5 className="title-wrapper mb-0 ms-2">{params.title}</h5> : null}
+                            {!!params.title ? <h2 className="title-wrapper mb-0 ms-2">{params.title}</h2> : null}
                         </div>
                     </CardTitle>
                     {!!params.description ? 
