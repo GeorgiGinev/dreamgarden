@@ -36,10 +36,8 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <label
-      htmlFor="language-selector"
-      className={styles.container}
-    >
+    <span className={styles.container}>
+      <label htmlFor="language-selector"></label>
       <select
         className="inline-flex appearance-none bg-transparent border-0"
         defaultValue={defaultValue}
@@ -53,6 +51,6 @@ export default function LocaleSwitcherSelect({
       <span className={`text-dark ${styles['container-icon']}`}>
         <CaretDownFill size={14} />
       </span>
-    </label>
+      </span>
   );
 }
