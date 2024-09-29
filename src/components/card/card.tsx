@@ -13,7 +13,7 @@ const Card = (params: CardParamsInterface) => {
                 borderRadius: 10
             }}>
                 <CardBody className="px-4 py-3">
-                    <CardTitle className="mb-2">
+                    <CardTitle as="h3" className="mb-2">
                         <div className="d-flex align-items-center">
                             {!!params.icon && !!params.title ? 
                                 <div style={{
