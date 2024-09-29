@@ -30,7 +30,7 @@ const Footer = async () => {
                         </small>
                     </Col> 
                     <Col xs={6} md={3} lg={2}>
-                        <b>{translation('footerServices')}</b>
+                        <strong>{translation('footerServices')}</strong>
                         <Link href={'/services/weddings'} className={styles['text-wrapper']}>
                             {serviceTranslation('Weddings')}
                         </Link>
@@ -42,9 +42,9 @@ const Footer = async () => {
                         </Link>
                     </Col>
                     <Col xs={6} md={3} lg={2}>
-                        <b>
+                        <strong>
                             {translation('footerContacts')}
-                        </b>
+                        </strong>
                         {data.phoneNumbers.map((phoneNumber: string, index: number) => {
                             return (<div key={index}>
                                 <a className={styles['text-wrapper']} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
@@ -60,9 +60,9 @@ const Footer = async () => {
                         </div>
                     </Col>
                     <Col xs={6} md={3} lg={2}>
-                        <b>
+                        <strong>
                             {translation('footerFollowUs')}
-                        </b>
+                        </strong>
                         {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
                             const icon = Object.keys(Icons).includes(socialMediaAccount.name);
 
