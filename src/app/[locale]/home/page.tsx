@@ -10,6 +10,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import RequestParamsService from "@/services/requestParamsService";
 import AOSComponent from "@/components/aos/aos.component";
 import { Metadata } from "next";
+import ContactForm from "@/components/contact-form/contact-form";
 
 export const metadata: Metadata = {
   title: process.env.TITLE_PREFIX as string + ' - Home',
@@ -70,6 +71,7 @@ export default async function Home() {
           <HomeLocation contacts={data.contacts}></HomeLocation>
         </Container>
       </section>
+      <ContactForm></ContactForm>
     </main>
   );
 }
