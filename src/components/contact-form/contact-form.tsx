@@ -47,7 +47,7 @@ const ContactForm = () => {
     return (
         <div className={'position-relative overflow-hidden'}>
             <div style={{
-                backgroundImage: 'url(/images/contact_form_flower.png)',
+                backgroundImage: 'url(/images/contact_form_flower.webp)',
                 width: 540,
                 height: 315,
                 position: 'absolute',
@@ -152,7 +152,7 @@ const ContactForm = () => {
                         </Form>
                     </div>
                     <div style={{
-                        backgroundImage: 'url(/images/contact_form_doodle.png)',
+                        backgroundImage: 'url(/images/contact_form_doodle.webp)',
                         width: 200,
                         height: 200,
                         position: 'absolute',
