@@ -6,8 +6,8 @@ const SectionTitle = (data: SectionTitleParamsInterface) => {
 
     return(
         <section className={styles.container}>
-            {params.secondaryTitle ? <h2 className={`text-primary m-0 secondary-text ${params.primaryTitleClass}`}>{params.secondaryTitle}</h2> : null}
-            {params.primrayTitle ? <h2 className={`text-dark m-0 primary-text ${params.secondaryTitleClass}`}>{params.primrayTitle}</h2> : null}
+            {params.secondaryTitle ? <h2 className={`text-primary m-0 secondary-text ${params.primaryTitleClass}`}>{params.secondaryTitle}</h2> : ''}
+            {params.primrayTitle ? <h2 className={`text-dark m-0 primary-text ${params.secondaryTitleClass}`}>{params.primrayTitle}</h2> : ''}
         </section>
     )
 }
