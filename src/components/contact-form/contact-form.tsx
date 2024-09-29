@@ -10,23 +10,39 @@ import Button from "../button/button";
 import { submitContactForm } from "./contact-form-submit";
 import { useRef, useState } from "react";
 import { createForm } from "@/services/formService";
+import { useForm, SubmitHandler } from "react-hook-form"
+
+type Inputs = {
+    name: string
+    phone: string,
+    email: string,
+    date: string,
+    note: string
+}
 
 const ContactForm = () => {
     const ref = useRef<HTMLFormElement>(null)
     
     const contactFormTranslation = useTranslations('ContactForm');
 
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+      } = useForm<Inputs>()
+
     const [show, setShow] = useState(false); 
     const showToastrMessage = () => { 
         setShow(true);
     }; 
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [date, setDate] = useState('');
-    const [note, setNote] = useState('');
 
-    let formData = createForm(['name', 'phone', 'email', 'date', 'note']);
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
+        submitContactForm(data).then((result) => {
+            ref.current?.reset()
+            showToastrMessage();
+        })
+    }
 
     return (
         <div className={'position-relative overflow-hidden'}>
@@ -53,12 +69,7 @@ const ContactForm = () => {
                 <Col lg={2}></Col>
                 <Col lg={8} className="position-relative">
                     <div className={styles['contact-form'] + " p-4"}>
-                        <Form ref={ref} action={() => {
-                            submitContactForm(formData).then((data) => {
-                                ref.current?.reset()
-                                showToastrMessage();
-                            })
-                        }}>
+                        <Form ref={ref} onSubmit={handleSubmit(onSubmit)}>
                             <Row> 
                                 <Col md={6} className="mb-2">
                                     <FormGroup>
@@ -67,8 +78,7 @@ const ContactForm = () => {
                                         }}>*</span></FormLabel>  
                                         <FormControl 
                                             type="text" 
-                                            name={name}
-                                            onChange={(e) => setName(e.target.value)} 
+                                            {...register("name", { required: true, maxLength: 20 })}
                                             placeholder={contactFormTranslation('contactFormInputName')} 
                                             required
                                         />
@@ -81,8 +91,7 @@ const ContactForm = () => {
                                         }}>*</span></FormLabel>  
                                         <FormControl 
                                             type="tel" 
-                                            name={phone} 
-                                            onChange={(e) => setPhone(e.target.value)} 
+                                            {...register("phone", { required: true })}
                                             placeholder={contactFormTranslation('contactFormInputPhoneNumber')} 
                                             required
                                         />
@@ -95,8 +104,7 @@ const ContactForm = () => {
                                         }}>*</span></FormLabel>  
                                         <FormControl 
                                             type="email" 
-                                            name={email} 
-                                            onChange={(e) => setEmail(e.target.value)} 
+                                            {...register("email", { required: true })}
                                             placeholder={contactFormTranslation('contactFormInputEmail')} 
                                             required
                                         />
@@ -110,17 +118,17 @@ const ContactForm = () => {
                                         <div className="position-relative">
                                             <FormControl 
                                                 type="date" 
-                                                name={date}
-                                                onChange={(e) => setDate(e.target.value)} 
+                                                {...register("date", { required: true })}
                                                 placeholder={contactFormTranslation('contactFormInputDate')}
                                                 required
                                             />
-                                            <Image style={{
+                                            {/* <Image style={{
                                                 position: 'absolute',
                                                 top: '50%',
                                                 right: 12,
-                                                transform: 'translateY(-50%)'
-                                            }} src={Icons.Calendar} alt={'Calendar'} width={16} height={16}></Image>
+                                                transform: 'translateY(-50%)',
+                                                userSelect: 'none'
+                                            }} src={Icons.Calendar} alt={'Calendar'} width={16} height={16}></Image> */}
                                       </div>
                                     </FormGroup>
                                 </Col>
@@ -129,8 +137,7 @@ const ContactForm = () => {
                                         <FormLabel>{contactFormTranslation('contactFormInputNote')}</FormLabel>  
                                         <FormControl 
                                             type="text"     
-                                            name={note} 
-                                            onChange={(e) => setNote(e.target.value)} 
+                                            {...register("note", { required: true })}
                                             rows={1} 
                                             as="textarea" 
                                             placeholder={contactFormTranslation('contactFormInputNote')} 

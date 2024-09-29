@@ -1,17 +1,15 @@
 "use server"
 
-export async function submitContactForm(formData: FormData): Promise<any> {
-    const rawFormData = {
-        name: formData.get('name'),
-        phone: formData.get('phone'),
-        email: formData.get('email'),
-        date: formData.get('date'),
-        note: formData.get('note')
-    }
-    
+export async function submitContactForm(data: {
+    name: string,
+    phone: string,
+    email: string,
+    date: string,
+    note: string
+}): Promise<any> {
     return fetch('http://localhost:3000/api/contact', {
         method: 'POST',
-        body: JSON.stringify(rawFormData),
+        body: JSON.stringify(data),
         headers: {
             'content-type': 'application/json'
         }
