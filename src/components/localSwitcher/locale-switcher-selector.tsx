@@ -37,6 +37,7 @@ export default function LocaleSwitcherSelect({
 
   return (
     <label
+      htmlFor="language-selector"
       className={styles.container}
     >
       <select
@@ -44,6 +45,7 @@ export default function LocaleSwitcherSelect({
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
+        id="language-selector"
       >
         {children}
       </select>
