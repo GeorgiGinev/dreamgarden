@@ -45,8 +45,8 @@ const Footer = async () => {
                         <b>
                             {translation('footerContacts')}
                         </b>
-                        {data.phoneNumbers.map((phoneNumber: string) => {
-                            return (<div>
+                        {data.phoneNumbers.map((phoneNumber: string, index: number) => {
+                            return (<div key={index}>
                                 <a className={styles['text-wrapper']} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                             </div>)
                         })}
@@ -63,11 +63,11 @@ const Footer = async () => {
                         <b>
                             {translation('footerFollowUs')}
                         </b>
-                        {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface) => {
+                        {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
                             const icon = Object.keys(Icons).includes(socialMediaAccount.name);
 
                             return (
-                            <div>
+                            <div key={index}>
                                 <a className={styles['text-wrapper']} href={socialMediaAccount.url} target="_blank">
                                     {icon ? <IconComponent icon={Icons[socialMediaAccount.name as keyof typeof Icons]} width={16} height={16}></IconComponent> : ''}
                                     <span className="ps-1">

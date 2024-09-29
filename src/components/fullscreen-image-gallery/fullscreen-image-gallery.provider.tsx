@@ -78,7 +78,7 @@ const FullScreenImageGalleryProvider = ({children}: FullScreenImageGalleryProvic
 
                         setImage(imagesList[findImageIndex-1]);
                     }}>
-                        <Image src={Icons.ArrowLeft} width={18} height={32} />
+                        <Image src={Icons.ArrowLeft} width={18} height={32} alt="Icon" />
                     </div>
                     <div className="arrow-button" onClick={() => {
                         if(!imagesList) {
@@ -97,7 +97,7 @@ const FullScreenImageGalleryProvider = ({children}: FullScreenImageGalleryProvic
 
                         setImage(imagesList[findImageIndex+1]);
                     }}>
-                        <Image src={Icons.ArrowRight} width={18} height={32} />
+                        <Image src={Icons.ArrowRight} width={18} height={32} alt="Icon" />
                     </div>
                 </ModalFooter> : ''}
             </Modal>

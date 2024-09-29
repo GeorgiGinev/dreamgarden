@@ -56,7 +56,7 @@ const Navigation = async () => {
                         {items.map((item, index) => {
                             if(!item.children || item.children.length === 0) {
                                 return (
-                                    <NavigationItemComponent item={item}></NavigationItemComponent>
+                                    <NavigationItemComponent item={item} key={index}></NavigationItemComponent>
                                 )
                             } else if(!!item.children && item.children.length > 0) {
                                 return (
