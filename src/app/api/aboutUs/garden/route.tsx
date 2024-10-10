@@ -25,16 +25,30 @@ function transformData(apiResponse: any) {
         }))
         : [];
 
+    // Handle multiple images by mapping over the images array
+    const images = item.attributes.images?.data.map((imageItem: any) => ({
+        primaryURL: imageItem.attributes.formats.large?.url || imageItem.attributes.url, // Get the primary image URL (use large or default)
+        sizes: Object.values(imageItem.attributes.formats).map((format: any) => ({
+            width: format.width,
+            height: format.height,
+            url: format.url, // URL for each format size
+        })),
+        name: imageItem.attributes.name, // Name of the image
+        id: imageItem.id.toString(), // Image ID
+    })) || []; // Fallback to empty array if no images are present
+
     return {
         description: item.attributes.description, // Dynamic description
-        images: images, // List of transformed images
+        capacityOfGuests: item.attributes.capacityOfGuests, // Capacity of guests
+        images: images, // Transformed images array
     };
 }
 
 export async function GET(request: Request) {
     const headers = new Headers();
     headers.set("Authorization", `Bearer ${process.env.STRAPI_TOKEN}`);
-    const response = await fetch(`${process.env.STRAPI_URL}about-garden?populate=image`, {
+
+    const response = await fetch(`${process.env.STRAPI_URL}about-garden?populate=images`, {
         headers: {
             Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
         },
@@ -43,5 +57,5 @@ export async function GET(request: Request) {
     const apiResponse = await response.json();
     const transformedData = transformData(apiResponse);
 
-    return NextResponse.json(transformedData, {status: 200});
+    return NextResponse.json(transformedData, { status: 200 });
 }
