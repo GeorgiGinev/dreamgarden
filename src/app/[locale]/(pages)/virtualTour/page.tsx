@@ -5,6 +5,7 @@ import { getLocale } from "next-intl/server";
 import RequestParamsService from "@/services/requestParamsService";
 import VirtualTourService from "@/services/virtualTour/virtualTour.service";
 import { Metadata } from "next";
+import { VirtualTourApiResponseInterface } from "@/interfaces/api/video-tour-api-response.interface";
 
 export const metadata: Metadata = {
     title: process.env.TITLE_PREFIX as string + ' - Virtual tour',
@@ -15,7 +16,7 @@ const Page = async () => {
     const locale = await getLocale();
 
     const videoTourService = new VirtualTourService();
-    const data = await videoTourService.getVideoTour(new RequestParamsService({locale: locale}));
+    const data: VirtualTourApiResponseInterface = await videoTourService.getVideoTour(new RequestParamsService({locale: locale}));
 
     return (
         <Container style={{
@@ -35,6 +36,16 @@ const Page = async () => {
                     </Col>
                     <Col lg={2}></Col>
                 </Row>
+                {!!data.embedding_link ? 
+                    <Row className="mt-5">
+                        <Col>
+                            <iframe style={{
+                                width: '100%',
+                                height: '350px'
+                            }} title="desc" src={data.embedding_link}></iframe>    
+                        </Col>
+                    </Row>
+                : ''}
                 <p>
                 </p>
             </div>
