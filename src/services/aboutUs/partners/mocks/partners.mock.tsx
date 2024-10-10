@@ -3,7 +3,8 @@ import { PartnersInterface } from "@/interfaces/partners.interface";
 import createImageSizeMock from "@/services/image/mocks/image-size.mock";
 import { createImageMock } from "@/services/image/mocks/image.mock";
 
-export function createAboutUsPartnersMock(params: Partial<AboutUsPartnersApiResponseInterface> | null = null): AboutUsPartnersApiResponseInterface {
+export function
+createAboutUsPartnersMock(params: Partial<AboutUsPartnersApiResponseInterface> | null = null): AboutUsPartnersApiResponseInterface {
     return ({
         partners: [createPartner(), createPartner()]
     })
