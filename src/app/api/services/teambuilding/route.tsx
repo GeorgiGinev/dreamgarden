@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // Helper function to transform the images structure
 function transformImages(images: any): any[] {
     return images?.data?.map((image: any) => {
-        const primaryURL = image.attributes.url;
+        const primaryURL = process.env.STRAPI_MEDIA_URL + image.attributes.url;
         const sizes = [
             {
                 width: image.attributes.width,

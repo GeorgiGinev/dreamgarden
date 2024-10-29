@@ -11,12 +11,12 @@ function transformHomeData(apiResponse: any) {
 
     const transformedKeyFacts = apiResponse.keyFacts.data.map((fact: any) => ({
         image: {
-            primaryURL: fact.attributes.formats.large.url,
+            primaryURL: process.env.STRAPI_MEDIA_URL + fact.attributes.formats.large.url,
             sizes: [
                 {
                     width: fact.attributes.formats.large.width,
                     height: fact.attributes.formats.large.height,
-                    url: fact.attributes.formats.large.url,
+                    url: process.env.STRAPI_MEDIA_URL + fact.attributes.formats.large.url,
                 },
             ],
             name: fact.attributes.name,
@@ -24,7 +24,7 @@ function transformHomeData(apiResponse: any) {
         },
     }));
 
-    const transformedVideos = apiResponse.videos.data.map((video: any) => video.attributes.url);
+    const transformedVideos = apiResponse.videos.data.map((video: any) => process.env.STRAPI_MEDIA_URL + video.attributes.url);
 
     return {
         videos: transformedVideos,

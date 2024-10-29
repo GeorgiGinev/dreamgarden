@@ -11,6 +11,7 @@ function transformData(apiResponse: any) {
     const item = apiResponse.data;
 
     // Transform happyClients object into an array of { from, quote } objects
+    console.log('item.attributes.happyClients', item.attributes.happyClients);
     const happyClients = Object.entries(item.attributes.happyClients).map(([from, quote]: [string, string]) => ({
         from, // The key becomes "from"
         quote, // The value becomes "quote"
@@ -20,11 +21,11 @@ function transformData(apiResponse: any) {
     const imageAttributes = item.attributes.image?.data?.attributes;
     const image = imageAttributes
         ? {
-            primaryURL: imageAttributes.formats.large?.url || imageAttributes.formats.medium?.url || imageAttributes.formats.small?.url || imageAttributes.formats.thumbnail?.url || imageAttributes.url,
+            primaryURL: process.env.STRAPI_MEDIA_URL + ( imageAttributes.formats.large?.url || imageAttributes.formats.medium?.url || imageAttributes.formats.small?.url || imageAttributes.formats.thumbnail?.url || imageAttributes.url),
             sizes: Object.values(imageAttributes.formats).map((format: any) => ({
                 width: format.width,
                 height: format.height,
-                url: format.url,
+                url: process.env.STRAPI_MEDIA_URL + format.url,
             })),
             name: imageAttributes.name, // Image name
             id: item.attributes.image.data.id.toString(), // Image ID
