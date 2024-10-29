@@ -24,7 +24,7 @@ const Page = async () => {
             paddingBottom: 72
         }}>
             <Title></Title>
-            <VideoTour video={data.video} />
+            {!!data.video ? <VideoTour video={data.video} /> : <></>}
             <div className="pb-4">
                 <Row className="align-items-end">
                     <Col lg={2}></Col>

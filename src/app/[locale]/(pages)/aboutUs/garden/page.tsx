@@ -29,7 +29,7 @@ const Page = async () => {
                             height: '100%'
                         }}
                         className="img-fluid"
-                        src={data.images[0].primaryURL} 
+                        src={data.images[0]?.primaryURL} 
                         alt={translations('primaryImage')}
                         width={400}
                         height={552}

@@ -8,16 +8,17 @@ export async function POST(request: Request) {
 }
 
 function transformData(apiResponse: any) {
-    return apiResponse.data.map((item: any) => ({
-        description: item.attributes.description,
-        video: item.attributes.video.data.attributes.url
-    }));
+    return {
+        description: apiResponse.data.attributes.description,
+        video: process.env.STRAPI_MEDIA_URL + apiResponse.data.attributes.video.data.attributes.url,
+        embedding_link: apiResponse.data.attributes.embedding_link
+    }
 }
 
 export async function GET(request: Request) {
     const headers = new Headers();
     headers.set("Authorization", `Bearer ${process.env.STRAPI_TOKEN}`);
-    const response = await fetch(`${process.env.STRAPI_URL}virtual-tours?populate=video`, {
+    const response = await fetch(`${process.env.STRAPI_URL}virtual-tour?populate=video`, {
         headers: {
             Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
         },
