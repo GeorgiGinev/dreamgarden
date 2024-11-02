@@ -10,9 +10,8 @@ export async function POST(request: Request) {
 
 function transformData(apiResponse: any) {
     const item = apiResponse.data;
-
-    const images = item.attributes.image.data
-        ? Object.values(item.attributes.image.data.attributes.formats).map((format: any) => ({
+    const images = !!item.attributes.image?.data
+        ? Object.values(item.attributes.image?.data?.attributes.formats).map((format: any) => ({
             primaryURL: format.url, // Get the image URL
             sizes: [
                 {
@@ -21,8 +20,8 @@ function transformData(apiResponse: any) {
                     url: format.url, // URL for the specific size
                 }
             ],
-            name: item.attributes.image.data.attributes.name, // Name of the image
-            id: item.attributes.image.data.id.toString(), // Image ID
+            name: item.attributes.image?.data?.attributes.name, // Name of the image
+            id: item.attributes.image?.data?.id?.toString(), // Image ID
         }))
         : [];
 

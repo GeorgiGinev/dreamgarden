@@ -38,6 +38,7 @@ const ContactForm = () => {
     }; 
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
+        console.log('onSubmit!');
         submitContactForm(data).then((result) => {
             ref.current?.reset()
             showToastrMessage();
