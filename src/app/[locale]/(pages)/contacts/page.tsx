@@ -51,24 +51,31 @@ const Page = async () => {
                 <Col lg={2}></Col>
                 <Col lg={8} className="position-relative">
                     <div className={styles['contact-form'] + " p-4"}>
-                        <p dangerouslySetInnerHTML={{ __html: data.description }}></p>
+
+                        {!!data.description ? <p dangerouslySetInnerHTML={{__html: data.description}}></p> : <></>}
                         <Row>
                             <Col xs={12} md={6}>
                                 <p className={"d-flex align-items-center " + styles['text-wrapper']}>
-                                    <IconComponent fill="inherit" icon={Icons.Mail} width={25} height={21}></IconComponent>
-                                    <a className={styles['text-wrapper'] + ' ps-1'} href={`mailto:${data.email}`}>{data.email}</a>
+                                    <IconComponent fill="inherit" icon={Icons.Mail} width={25}
+                                                   height={21}></IconComponent>
+                                    <a className={styles['text-wrapper'] + ' ps-1'}
+                                       href={`mailto:${data.email}`}>{data.email}</a>
                                 </p>
                                 <p className={"d-flex align-items-center " + styles['text-wrapper']}>
-                                    <IconComponent fill="inherit" icon={Icons.Pin} width={18} height={27}></IconComponent>
+                                    <IconComponent fill="inherit" icon={Icons.Pin} width={18}
+                                                   height={27}></IconComponent>
                                     <span className="ps-1">{data.specificAddress}</span>
                                 </p>
                             </Col>
                             <Col xs={12} md={6}>
-                                {data.phoneNumbers.map((phoneNumber: string, index: number) => {
+                                {data.phoneNumbers?.map((phoneNumber: string, index: number) => {
                                     return (
-                                        <p className={"d-flex align-items-center " + styles['text-wrapper']} key={index}>
-                                            <IconComponent fill="inherit" icon={Icons.Phone} width={22} height={23}></IconComponent>
-                                            <a className={styles['text-wrapper'] + ' ps-1'} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                                        <p className={"d-flex align-items-center " + styles['text-wrapper']}
+                                           key={index}>
+                                            <IconComponent fill="inherit" icon={Icons.Phone} width={22}
+                                                           height={23}></IconComponent>
+                                            <a className={styles['text-wrapper'] + ' ps-1'}
+                                               href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                                         </p>
                                     );
                                 })}
@@ -84,19 +91,22 @@ const Page = async () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
-                            const icon = Object.keys(Icons).includes(socialMediaAccount.name);
+                            {data.socialMediaAccounts?.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
+                                const icon = Object.keys(Icons).includes(socialMediaAccount.name);
 
-                            return (
-                            <p className="px-1" key={index}>
-                                <a className={styles['text-wrapper']} href={socialMediaAccount.url} target="_blank">
-                                    {icon ? <IconComponent fill="inherit" icon={Icons[socialMediaAccount.name as keyof typeof Icons]} width={16} height={16}></IconComponent> : ''}
-                                    <span className="ps-1">
+                                return (
+                                    <p className="px-1" key={index}>
+                                        <a className={styles['text-wrapper']} href={socialMediaAccount.url}
+                                           target="_blank">
+                                            {icon ? <IconComponent fill="inherit"
+                                                                   icon={Icons[socialMediaAccount.name as keyof typeof Icons]}
+                                                                   width={16} height={16}></IconComponent> : ''}
+                                            <span className="ps-1">
                                         {socialMediaAccount.name}
                                     </span>
-                                </a>
-                            </p>);
-                        })}
+                                        </a>
+                                    </p>);
+                            })}
                         </div>
                     </div>
                     <div style={{
