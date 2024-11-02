@@ -1,4 +1,4 @@
-"use server"
+"use client"
 
 import { Carousel, CarouselItem } from "react-bootstrap";
 import styles from "./carousel.module.scss"
@@ -11,11 +11,15 @@ import { CarouselComponentInterface } from "./carousel.component.interface";
 const HomeCarouselComponent = (data: CarouselComponentInterface) => {
     const t = useTranslations('Home')
       
+    console.log('data.images[0] : ', data.images[0])
     return(
         <section className={styles.container}>
             <div className="carousel-wrapper">
+                <video className={styles['video-wrapper']} autoPlay loop>
+                    <source src={data.images[0]} type="video/mp4" />
+                </video>
                 <div className="carousel-shade"></div>
-                <Carousel data-aos="fade-in" controls={data.images.length > 1}>
+                {/* <Carousel data-aos="fade-in" controls={data.images.length > 1}>
                     {data.images.map((imageObj: string, index: number) => {
                         return (
                             <CarouselItem style={{
@@ -35,7 +39,8 @@ const HomeCarouselComponent = (data: CarouselComponentInterface) => {
                             </CarouselItem>
                         )
                     })}
-                </Carousel>
+                </Carousel> */}
+
                 <div className="ask-us-wrapper">
                     <Link href={'/askUs'}>
                     <Button>

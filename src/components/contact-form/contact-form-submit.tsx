@@ -7,6 +7,8 @@ export async function submitContactForm(data: {
     date: string,
     note: string
 }): Promise<any> {
+    console.log('submitContactForm');
+    
     return fetch('http://localhost:3000/api/contact', {
         method: 'POST',
         body: JSON.stringify(data),
