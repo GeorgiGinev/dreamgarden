@@ -25,18 +25,6 @@ function transformData(apiResponse: any) {
         }))
         : [];
 
-    // Handle multiple images by mapping over the images array
-    const images = item.attributes.images?.data.map((imageItem: any) => ({
-        primaryURL: imageItem.attributes.formats.large?.url || imageItem.attributes.url, // Get the primary image URL (use large or default)
-        sizes: Object.values(imageItem.attributes.formats).map((format: any) => ({
-            width: format.width,
-            height: format.height,
-            url: format.url, // URL for each format size
-        })),
-        name: imageItem.attributes.name, // Name of the image
-        id: imageItem.id.toString(), // Image ID
-    })) || []; // Fallback to empty array if no images are present
-
     return {
         description: item.attributes.description, // Dynamic description
         capacityOfGuests: item.attributes.capacityOfGuests, // Capacity of guests

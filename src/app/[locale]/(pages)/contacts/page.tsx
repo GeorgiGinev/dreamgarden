@@ -107,7 +107,7 @@ const Page = async () => {
                                         </a>
                                     </p>);
                             })}
-                        {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
+                        {data.socialMediaAccounts?.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
                             const icon = Object.keys(Icons).includes(socialMediaAccount.name);
 
                             return (
