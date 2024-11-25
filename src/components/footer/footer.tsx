@@ -45,7 +45,7 @@ const Footer = async () => {
                         <strong>
                             {translation('footerContacts')}
                         </strong>
-                        {data.phoneNumbers.map((phoneNumber: string, index: number) => {
+                        {data.phoneNumbers?.map((phoneNumber: string, index: number) => {
                             return (<div key={index}>
                                 <a className={styles['text-wrapper']} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                             </div>)
@@ -54,7 +54,7 @@ const Footer = async () => {
                             <a className={styles['text-wrapper']} href={`mailto:${data.email}`}>{data.email}</a>
                         </div>
                         <div>
-                            <a className={styles['text-wrapper']} href={`https://www.google.com/maps/place/${data.googleLocation.lat},${data.googleLocation.long}`} target="_blank">
+                            <a className={styles['text-wrapper']} href={`https://www.google.com/maps/place/${data.googleLocation?.lat},${data.googleLocation?.long}`} target="_blank">
                                 {translation('footerGoogleMapsLocation')}
                             </a>
                         </div>
@@ -63,7 +63,7 @@ const Footer = async () => {
                         <strong>
                             {translation('footerFollowUs')}
                         </strong>
-                        {data.socialMediaAccounts.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
+                        {data.socialMediaAccounts?.map((socialMediaAccount: SocialMediaApiResponseInterface, index: number) => {
                             const icon = Object.keys(Icons).includes(socialMediaAccount.name);
 
                             return (

@@ -5,8 +5,9 @@ import { ImageInterface } from "@/interfaces/image/image.interface";
 
 export function createGrid(images: GalleryInterface): any {
     const grid = getGrid();
+    let currentImageIndex = 0;
 
-    fillGrid(grid, images.images, 0)
+    fillGrid(grid, images.images, currentImageIndex)
     return grid;
 }
 
@@ -22,10 +23,12 @@ function getGrid(): any {
 function fillGrid(grid: any[], images: ImageInterface[], currentImageIndex: number): any {
     return grid.map((row: any) => {
         if(Array.isArray(row)) {
-            return fillGrid(row, images, currentImageIndex);
+            currentImageIndex = fillGrid(row, images, currentImageIndex);
+            return currentImageIndex;
         } else {
             row.image = images[currentImageIndex];
             currentImageIndex++;
+            return currentImageIndex;
         }
     })
 }

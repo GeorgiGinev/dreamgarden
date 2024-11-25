@@ -11,6 +11,8 @@ const VideoTour = (params: VideoTourInterface) => {
     const [startVideo, setStartVideo] = useState(false);
     const translationsVirtualTour = useTranslations('VirtualTour');
 
+    console.log('params.video : ', params.video);
+    
     const playVideo = () => {
         if(!!videoRef.current) {
             (videoRef.current as any).play();

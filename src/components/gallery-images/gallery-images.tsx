@@ -13,7 +13,7 @@ import { useFullScreenImageGalleryContext } from "../fullscreen-image-gallery/fu
 const GalleryImages = (params: GalleryImageInterface) => {
     const { setImage, setImagesList } = useFullScreenImageGalleryContext();
     const {images, currentPage} = useContext<GalleryContextInterface>(GalleryContext);
-
+    console.log('images : ', images);
     const generateGrid = (grid: any[], isFirstRow: boolean): any => {
         if(!grid) {
             return;
@@ -38,7 +38,7 @@ const GalleryImages = (params: GalleryImageInterface) => {
                 }
             } 
             
-            return(<Col md={row.size} key={(row.image as ImageInterface).id}>
+            return(<Col md={row.size} key={!!row.image ? (row.image as ImageInterface).id : index}>
                 <div className={`${styles['image-wrapper']}`}>
                 <div className={`${styles['image']}`}
                 onClick={() => {
@@ -46,7 +46,7 @@ const GalleryImages = (params: GalleryImageInterface) => {
                     setImagesList([]);
                 }}
                 style={{
-                    backgroundImage: `url('${(row.image as ImageInterface).sizes[0].url}')`,
+                    backgroundImage: `url('${!!(row.image as ImageInterface) ? (row.image as ImageInterface).sizes[0].url : ''}')`,
                     height: `${row.height}`
                 }}></div>
                 </div>

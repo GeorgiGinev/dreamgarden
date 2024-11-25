@@ -38,6 +38,7 @@
             top: 0;
             left: 0;
             background-color: rgba(0, 0, 0);
+            z-index: -1;
         }
 
         :global(button) {
@@ -51,4 +52,13 @@
             transform: translateX(-50%);
         }
     }
+}
+
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
 }

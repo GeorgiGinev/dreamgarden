@@ -6,8 +6,8 @@ import GoogleMapComponent from "./google-map/google-map.component";
 
 const HomeLocation = (params: LocationInterface) => {
     const homeTranslation = useTranslations('Home');
-    const lat = params.contacts.googleLocation.lat;
-    const long = params.contacts.googleLocation.long;
+    const lat = params.contacts.googleLocation?.lat;
+    const long = params.contacts.googleLocation?.long;
 
     return (
         <Row className="mt-4">
@@ -16,15 +16,15 @@ const HomeLocation = (params: LocationInterface) => {
                     <div className="mb-3">
                         <h2 className="mb-3">{homeTranslation('locationHomeAddressTitle')}</h2>
                         <p>
-                            {params.contacts.specificAddress}
+                            {params.contacts?.specificAddress}
                         </p>
                     </div>
                     <div className="mb-3">
                         <h2 className="mb-3">{homeTranslation('locationHomeContactTitle')}</h2>
                         <p>
-                            {params.contacts.phoneNumbers[0]}
+                            {params.contacts?.phoneNumbers ? params.contacts?.phoneNumbers[0] : ''}
                             <br />
-                            {params.contacts.email}
+                            {params.contacts?.email}
                         </p>
                     </div>
                 </div>
