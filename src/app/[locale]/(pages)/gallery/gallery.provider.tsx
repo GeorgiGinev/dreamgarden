@@ -29,6 +29,10 @@ const GalleryProvider = (data: GalleryProviderInterface) => {
             return;
         }
         galleryService.getGalleryImages(new RequestParamsService({page: loadPage})).then((response: GalleryApiResponseInterface) => {
+            if(Number(response.currentPage) > Number(response.totalPages)){
+                return;
+            }
+            
             setGallery(prevGallery => {
                 let fillGallery = [...prevGallery];
 
