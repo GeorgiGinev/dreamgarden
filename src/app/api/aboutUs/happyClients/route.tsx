@@ -11,10 +11,9 @@ function transformData(apiResponse: any) {
     const item = apiResponse.data;
 
     // Transform happyClients object into an array of { from, quote } objects
-    console.log('item.attributes.happyClients', item.attributes.happyClients);
-    const happyClients = Object.entries(item.attributes.happyClients).map(([from, quote]: [string, string]) => ({
-        from, // The key becomes "from"
-        quote, // The value becomes "quote"
+    const happyClients: any = Object.keys(item.attributes.happyClients).map((from: string) => ({
+        from: from, // The key becomes "from"
+        quote: (item as any).attributes.happyClients[from], // The value becomes "quote"
     }));
 
     // Transform the image object
