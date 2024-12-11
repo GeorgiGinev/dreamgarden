@@ -1,15 +1,23 @@
+# Use a lightweight Node.js image
 FROM node:20
 
+# Set working directory
 WORKDIR /app
 
+# Copy only package.json initially
 COPY package.json ./
 
-RUN npm i
+# Install dependencies (this will generate package-lock.json if it doesn't exist)
+RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
-RUN npm run build
+# Build the Next.js application
+RUN npm run build && ls -la .next
 
-COPY .next ./.next
+# Expose the application port
+EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+# Start the Next.js application in production mode
+CMD ["npm", "run", "start"]
