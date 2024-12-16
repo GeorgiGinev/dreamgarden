@@ -20,4 +20,4 @@ RUN npm run build && ls -la .next
 EXPOSE 3000
 
 # Start the Next.js application in production mode
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "prod"]
